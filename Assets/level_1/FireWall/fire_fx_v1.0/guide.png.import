@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drkp5vgbdtdgd"
-path="res://.godot/imported/pixil-frame-0.png-91b8ac4b12645371aeb8c0520a5e39e5.ctex"
+uid="uid://bfxgfr7uokibx"
+path="res://.godot/imported/guide.png-634524d69ab409ef47b165d9105f6531.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/level_1/Fiery Brambles/pixil-frame-0.png"
-dest_files=["res://.godot/imported/pixil-frame-0.png-91b8ac4b12645371aeb8c0520a5e39e5.ctex"]
+source_file="res://Assets/level_1/FireWall/fire_fx_v1.0/guide.png"
+dest_files=["res://.godot/imported/guide.png-634524d69ab409ef47b165d9105f6531.ctex"]
 
 [params]
 

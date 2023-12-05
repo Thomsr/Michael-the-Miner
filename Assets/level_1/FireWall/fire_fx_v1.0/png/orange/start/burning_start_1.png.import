@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdsomldqs5pav"
-path="res://.godot/imported/pixil-frame-1.png-b7494cb29a489219666ee4bf2394b6bf.ctex"
+uid="uid://b6ut7fq8lrfdf"
+path="res://.godot/imported/burning_start_1.png-e3b4bf647a67ed22459ce86322680665.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/level_1/Fiery Brambles/pixil-frame-1.png"
-dest_files=["res://.godot/imported/pixil-frame-1.png-b7494cb29a489219666ee4bf2394b6bf.ctex"]
+source_file="res://Assets/level_1/FireWall/fire_fx_v1.0/png/orange/start/burning_start_1.png"
+dest_files=["res://.godot/imported/burning_start_1.png-e3b4bf647a67ed22459ce86322680665.ctex"]
 
 [params]
 

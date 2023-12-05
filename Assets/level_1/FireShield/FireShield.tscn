@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr11y3mmjwtsg"]
+
+[ext_resource type="Texture2D" uid="uid://dra0w0qaxodli" path="res://Assets/level_1/FireShield/pixil-frame-0.png" id="1_o5r3j"]
+[ext_resource type="Script" path="res://Assets/level_1/FireShield/FireShield.gd" id="1_u1p0a"]
+[ext_resource type="Texture2D" uid="uid://dpu0fbijgtfd6" path="res://Assets/level_1/FireShield/pixil-frame-1.png" id="2_o75bs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_datig"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("1_o5r3j")
+}, {
+"duration": 4.0,
+"texture": ExtResource("2_o75bs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cttmh"]
+size = Vector2(16, 15)
+
+[node name="Node2D" type="Area2D"]
+script = ExtResource("1_u1p0a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_datig")
+autoplay = "default"
+frame_progress = 0.641042
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_cttmh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
