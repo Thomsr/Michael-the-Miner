@@ -6,12 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://rg1s7kn274nt" path="res://Assets/Cave/background4a.png" id="4_vci5t"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
-layer = -2
+layer = -3
 metadata/_edit_horizontal_guides_ = []
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0, 0)
-motion_mirroring = Vector2(1920, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
 scale = Vector2(2, 2.25)
@@ -19,8 +18,7 @@ texture = ExtResource("1_ay20y")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.2, 0.1)
-motion_mirroring = Vector2(1920, 0)
+motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
 scale = Vector2(2, 2.25)
@@ -28,8 +26,7 @@ texture = ExtResource("2_guasr")
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.5, 0.3)
-motion_mirroring = Vector2(1920, 0)
+motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
 scale = Vector2(2, 2.25)
@@ -37,7 +34,7 @@ texture = ExtResource("3_cq8k3")
 centered = false
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
-motion_mirroring = Vector2(1920, 0)
+motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer5"]
 scale = Vector2(2, 2.25)
