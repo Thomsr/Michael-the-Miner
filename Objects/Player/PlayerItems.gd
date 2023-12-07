@@ -1,3 +1,4 @@
 extends Node
 
-var HasFireShield = 0
+var HasFireShield = false
+var HasHelmet = false

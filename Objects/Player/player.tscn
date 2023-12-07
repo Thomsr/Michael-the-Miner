@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://c80artkk3wfsw" path="res://Assets/Player/Run/run6.png" id="16_0n7q0"]
 [ext_resource type="Texture2D" uid="uid://dxpn00keo47r0" path="res://Assets/Player/Run/run7.png" id="17_xdjpe"]
 [ext_resource type="Texture2D" uid="uid://b14widywvqyec" path="res://Assets/Player/Run/run8.png" id="18_iobqx"]
-[ext_resource type="Texture2D" uid="uid://7mbqlrt60eys" path="res://Assets/Player/Underwater/underwater1.png" id="31_gyvus"]
+[ext_resource type="Texture2D" uid="uid://dopyywf0ov1j" path="res://Assets/Player/Underwater/helmet.png" id="31_e5mh3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r87mq"]
 size = Vector2(18, 24)
@@ -53,7 +53,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_7ia5x")
 }, {
-"duration": 4.0,
+"duration": 100.0,
 "texture": ExtResource("8_j1ojd")
 }],
 "loop": true,
@@ -137,18 +137,11 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 10.0
-}, {
-"frames": [{
-"duration": 1e+09,
-"texture": ExtResource("31_gyvus")
-}],
-"loop": true,
-"name": &"under_water",
-"speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("helmet")]
 script = ExtResource("1_i3ffo")
+helmet = NodePath("AnimatedSprite2D/Sprite2D")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 range_layer_min = -3
@@ -162,7 +155,17 @@ shape = SubResource("RectangleShape2D_r87mq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gmxwe")
-animation = &"under_water"
-autoplay = "under_water"
+animation = &"death"
+autoplay = "idle"
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatedSprite2D"]
+visible = false
+position = Vector2(0, -5)
+texture = ExtResource("31_e5mh3")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

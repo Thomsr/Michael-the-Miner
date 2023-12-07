@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 @onready var _animated_sprite = $AnimatedSprite2D
+@onready var timer = $Timer
+@export var helmet: Sprite2D
+
 var animation_lock = false;
 const SPEED = 300.0
 const JUMP_VELOCITY = -450.0
@@ -9,9 +12,15 @@ const JUMP_VELOCITY = -450.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
+	if PlayerItems.HasHelmet:
+		helmet.visible = true
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		
+	if(animation_lock):
+		move_and_slide()
+		return
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -35,12 +44,10 @@ func _physics_process(delta):
 	move_and_slide()
 
 func die() -> void:
-	get_tree().reload_current_scene()
-
-func has_died():
 	animation_lock = true;
 	_animated_sprite.play("death")
+	timer.start()
 
-func _on_animated_sprite_2d_animation_finished():
-	if(animation_lock):
-		print("died screen")		
+# Om de death animatie genoeg tijd te geven om af te spelen
+func _on_timer_timeout():
+		get_tree().reload_current_scene()
