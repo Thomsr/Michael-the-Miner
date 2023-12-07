@@ -11,9 +11,15 @@ config_version=5
 [application]
 
 config/name="Michaeal The Miner"
-run/main_scene="res://Levels/Level2/level_2.tscn"
+
+run/main_scene="res://Levels/TestLevel/level_1.tscn"
+
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+PlayerItems="*res://Objects/Player/PlayerItems.gd"
 
 [display]
 

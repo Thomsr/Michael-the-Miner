@@ -34,6 +34,9 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+func die() -> void:
+	get_tree().reload_current_scene()
+
 func has_died():
 	animation_lock = true;
 	_animated_sprite.play("death")

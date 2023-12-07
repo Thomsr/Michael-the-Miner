@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2ibiqkogj2ef"]
+
+[ext_resource type="Texture2D" uid="uid://qp1dwj6h5kye" path="res://Assets/level_1/Lava Shooter/Volcano/pixil-frame-0.png" id="2_pj10w"]
+[ext_resource type="Texture2D" uid="uid://bkqma2idwwsyb" path="res://Assets/level_1/Lava Shooter/Volcano/pixil-frame-1.png" id="3_h0djb"]
+
+[sub_resource type="GDScript" id="GDScript_m5li6"]
+script/source = "extends Area2D
+ 
+ 
+func _on_body_entered(body: Node2D) -> void:
+	if body.has_method(\"die\"):
+		if PlayerItems.HasFireShield == 0:
+			body.die()
+ 
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w2pxj"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("2_pj10w")
+}, {
+"duration": 4.0,
+"texture": ExtResource("3_h0djb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p2du7"]
+
+[node name="Node2D" type="Area2D"]
+script = SubResource("GDScript_m5li6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w2pxj")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p2du7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

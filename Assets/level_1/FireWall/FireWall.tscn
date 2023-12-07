@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://bqondw68kvuxg"]
+
+[ext_resource type="Texture2D" uid="uid://dhuagn1br1526" path="res://Assets/level_1/FireWall/fire_fx_v1.0/png/orange/loops/burning_loop_1.png" id="1_dql0q"]
+[ext_resource type="Script" path="res://Assets/level_1/FireWall/FireWall.gd" id="1_p1pdx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wo801"]
+atlas = ExtResource("1_dql0q")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cor81"]
+atlas = ExtResource("1_dql0q")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1bbb"]
+atlas = ExtResource("1_dql0q")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdev4"]
+atlas = ExtResource("1_dql0q")
+region = Rect2(72, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yun5o"]
+atlas = ExtResource("1_dql0q")
+region = Rect2(96, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdqd4"]
+atlas = ExtResource("1_dql0q")
+region = Rect2(120, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jraqi"]
+atlas = ExtResource("1_dql0q")
+region = Rect2(144, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0g6q"]
+atlas = ExtResource("1_dql0q")
+region = Rect2(168, 0, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ddtjs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wo801")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cor81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1bbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdev4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yun5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdqd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jraqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0g6q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mir7d"]
+size = Vector2(15, 26)
+
+[node name="Node2D" type="Area2D"]
+script = ExtResource("1_p1pdx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ddtjs")
+autoplay = "default"
+frame_progress = 0.0804426
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 3)
+shape = SubResource("RectangleShape2D_mir7d")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
