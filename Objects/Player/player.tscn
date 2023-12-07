@@ -1,21 +1,65 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5emhqsb5jv2r"]
+[gd_scene load_steps=34 format=3 uid="uid://c5emhqsb5jv2r"]
 
 [ext_resource type="Script" path="res://Objects/Player/player.gd" id="1_i3ffo"]
 [ext_resource type="Texture2D" uid="uid://c1munelptonky" path="res://Assets/Lights/2d_lights_and_shadows_neutral_point_light.webp" id="2_2pro2"]
 [ext_resource type="Texture2D" uid="uid://brwiyn2l1hjhc" path="res://Assets/Player/Idle/idle1.png" id="2_rpy66"]
+[ext_resource type="Texture2D" uid="uid://u1bwxrghsk22" path="res://Assets/Player/Death/death1.png" id="3_4ixcx"]
+[ext_resource type="Script" path="res://Objects/Player/PointLight2D.gd" id="3_tc2qy"]
+[ext_resource type="Texture2D" uid="uid://dg3mli1deemtf" path="res://Assets/Player/Death/death2.png" id="4_dj3ib"]
 [ext_resource type="Texture2D" uid="uid://ltd54txs5twf" path="res://Assets/Player/Idle/idle2.png" id="4_f0jsx"]
+[ext_resource type="Texture2D" uid="uid://cew0vilteh3ts" path="res://Assets/Player/Death/death3.png" id="5_bj8e0"]
 [ext_resource type="Texture2D" uid="uid://buasn6rkoyp5q" path="res://Assets/Player/Idle/idle3.png" id="5_fdi1v"]
+[ext_resource type="Texture2D" uid="uid://debm14x8gcgbe" path="res://Assets/Player/Death/death4.png" id="6_jfp4m"]
 [ext_resource type="Texture2D" uid="uid://dkidlv7hymn5e" path="res://Assets/Player/Idle/idle4.png" id="6_jlv4f"]
+[ext_resource type="Texture2D" uid="uid://dvx4k3d62d8ad" path="res://Assets/Player/Death/death5.png" id="7_7ia5x"]
 [ext_resource type="Texture2D" uid="uid://b4g4jbjywdeps" path="res://Assets/Player/Idle/idle5.png" id="7_fgyrn"]
+[ext_resource type="Texture2D" uid="uid://c7iehtonm6akp" path="res://Assets/Player/Death/death6.png" id="8_j1ojd"]
 [ext_resource type="Texture2D" uid="uid://d0u8ctel7oa13" path="res://Assets/Player/Idle/idle6.png" id="8_yoo1r"]
 [ext_resource type="Texture2D" uid="uid://dgjekdqwbnbkn" path="res://Assets/Player/Idle/idle7.png" id="9_t0avc"]
 [ext_resource type="Texture2D" uid="uid://chcthxptotmsp" path="res://Assets/Player/Idle/idle8.png" id="10_clbmu"]
+[ext_resource type="Texture2D" uid="uid://bxh0lyq6axb32" path="res://Assets/Player/JumpUp/JumpUp1.png" id="11_ilssl"]
+[ext_resource type="Texture2D" uid="uid://c7uynb2itxaqr" path="res://Assets/Player/Run/run1.png" id="11_ryt51"]
+[ext_resource type="Texture2D" uid="uid://dg617357ucglt" path="res://Assets/Player/Run/run2.png" id="12_0a1mp"]
+[ext_resource type="Texture2D" uid="uid://bv3y6tvfl57l3" path="res://Assets/Player/JumpUp/JumpUp2.png" id="12_202r2"]
+[ext_resource type="Texture2D" uid="uid://bv41nym0kerci" path="res://Assets/Player/Run/run3.png" id="13_agps5"]
+[ext_resource type="Texture2D" uid="uid://cuj73ucc8unko" path="res://Assets/Player/JumpUp/JumpUp3.png" id="13_gbada"]
+[ext_resource type="Texture2D" uid="uid://v60yabhpffyr" path="res://Assets/Player/JumpUp/JumpUp4.png" id="14_2sa88"]
+[ext_resource type="Texture2D" uid="uid://c3b5l36v1v2ko" path="res://Assets/Player/Run/run4.png" id="14_n2n0t"]
+[ext_resource type="Texture2D" uid="uid://csnpp0rpexye6" path="res://Assets/Player/Run/run5.png" id="15_72hdj"]
+[ext_resource type="Texture2D" uid="uid://dgwg5rlf1wxma" path="res://Assets/Player/JumpUp/JumpUp5.png" id="15_f60x5"]
+[ext_resource type="Texture2D" uid="uid://c80artkk3wfsw" path="res://Assets/Player/Run/run6.png" id="16_0n7q0"]
+[ext_resource type="Texture2D" uid="uid://dxpn00keo47r0" path="res://Assets/Player/Run/run7.png" id="17_xdjpe"]
+[ext_resource type="Texture2D" uid="uid://b14widywvqyec" path="res://Assets/Player/Run/run8.png" id="18_iobqx"]
+[ext_resource type="Texture2D" uid="uid://7mbqlrt60eys" path="res://Assets/Player/Underwater/underwater1.png" id="31_gyvus"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r87mq"]
-size = Vector2(20, 24)
+size = Vector2(18, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gmxwe"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4ixcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dj3ib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bj8e0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jfp4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7ia5x")
+}, {
+"duration": 4.0,
+"texture": ExtResource("8_j1ojd")
+}],
+"loop": true,
+"name": &"death",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_rpy66")
@@ -43,6 +87,63 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ilssl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_202r2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gbada")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2sa88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_f60x5")
+}],
+"loop": true,
+"name": &"jump_up",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ryt51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0a1mp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_agps5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n2n0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_72hdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0n7q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xdjpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_iobqx")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1e+09,
+"texture": ExtResource("31_gyvus")
+}],
+"loop": true,
+"name": &"under_water",
 "speed": 5.0
 }]
 
@@ -50,15 +151,18 @@ animations = [{
 script = ExtResource("1_i3ffo")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-range_layer_min = -2
+range_layer_min = -3
 range_item_cull_mask = 3
 texture = ExtResource("2_2pro2")
+script = ExtResource("3_tc2qy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6, 4)
+position = Vector2(-2, 4)
 shape = SubResource("RectangleShape2D_r87mq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gmxwe")
-animation = &"idle"
-autoplay = "idle"
+animation = &"under_water"
+autoplay = "under_water"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
