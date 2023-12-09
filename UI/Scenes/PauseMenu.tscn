@@ -36,6 +36,7 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,7 +47,6 @@ script = ExtResource("1_p2axn")
 stream = ExtResource("2_8dabb")
 
 [node name="PauseHome" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -145,6 +145,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_f0i6c")
 text = "Main Menu"
 
 [node name="PauseOptions" parent="." instance=ExtResource("4_lldg4")]
+visible = false
 layout_mode = 1
 
 [node name="ColorRect" parent="PauseOptions" index="0"]
