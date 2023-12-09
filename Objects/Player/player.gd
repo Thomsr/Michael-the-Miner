@@ -50,4 +50,7 @@ func die() -> void:
 
 # Om de death animatie genoeg tijd te geven om af te spelen
 func _on_timer_timeout():
-		get_tree().reload_current_scene()
+		get_tree().paused = true
+		var LevelNumber = get_parent()
+		LevelNumber.get_node("./UI/GameOver").visible = true
+		#get_tree().reload_current_scene()

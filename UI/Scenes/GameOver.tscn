@@ -1,0 +1,136 @@
+[gd_scene load_steps=12 format=3 uid="uid://cks2vjvy0ql8y"]
+
+[ext_resource type="Script" path="res://UI/Scripts/GameOver.gd" id="1_2u2v5"]
+[ext_resource type="AudioStream" uid="uid://c7x82jgtxg71v" path="res://Assets/UI/Audio/Sfx/EditedAudio.mp3" id="2_wrppi"]
+[ext_resource type="FontFile" uid="uid://dsr4l3oqi2l2q" path="res://Assets/UI/Fonts/ccoverbyteoffregular.ttf" id="3_w425r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf0q1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgavl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjwi0"]
+bg_color = Color(0, 0, 0, 0.329412)
+border_color = Color(1, 1, 1, 0.509804)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfc7d"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mwiw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ehbqv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oep5w"]
+bg_color = Color(0, 0, 0, 0.329412)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nthcl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2u2v5")
+stream = ExtResource("2_wrppi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(550, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.329412)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -141.5
+offset_right = 210.0
+offset_bottom = 141.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOver" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_w425r")
+theme_override_font_sizes/font_size = 80
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Filler" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "
+"
+
+[node name="PlayAgain" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_w425r")
+theme_override_font_sizes/font_size = 45
+text = "Play Again?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Filler2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="NewGameButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 0.627451)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("3_w425r")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_yf0q1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cgavl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qjwi0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dfc7d")
+text = "  Yes  "
+
+[node name="Filler" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "            "
+
+[node name="GoBackButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 0.627451)
+theme_override_fonts/font = ExtResource("3_w425r")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_0mwiw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ehbqv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oep5w")
+theme_override_styles/focus = SubResource("StyleBoxFlat_nthcl")
+text = "  No  "
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/GoBackButton" to="." method="_on_go_back_button_pressed"]

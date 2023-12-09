@@ -1,0 +1,191 @@
+[gd_scene load_steps=13 format=3 uid="uid://boxpqa0m0ihcf"]
+
+[ext_resource type="Script" path="res://UI/Scripts/PauseMenu.gd" id="1_p2axn"]
+[ext_resource type="AudioStream" uid="uid://c7x82jgtxg71v" path="res://Assets/UI/Audio/Sfx/EditedAudio.mp3" id="2_8dabb"]
+[ext_resource type="FontFile" uid="uid://dsr4l3oqi2l2q" path="res://Assets/UI/Fonts/ccoverbyteoffregular.ttf" id="3_qpeyh"]
+[ext_resource type="PackedScene" uid="uid://cjl8alxk22xlp" path="res://UI/Scenes/PauseOptions.tscn" id="4_lldg4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjdlt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy6fb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vt7mv"]
+bg_color = Color(0, 0, 0, 0.329412)
+border_color = Color(1, 1, 1, 0.509804)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hn62e"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0atcn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gnr5n"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3hwl"]
+bg_color = Color(0, 0, 0, 0.329412)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0i6c"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p2axn")
+stream = ExtResource("2_8dabb")
+
+[node name="PauseHome" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PauseHome"]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -195.0
+offset_right = 180.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.329412)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseHome"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -141.5
+offset_right = 135.0
+offset_bottom = 141.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Paused" type="Label" parent="PauseHome/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qpeyh")
+theme_override_font_sizes/font_size = 75
+text = "   Paused   "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Filler" type="Label" parent="PauseHome/VBoxContainer"]
+layout_mode = 2
+text = "
+"
+
+[node name="ResumeButton" type="Button" parent="PauseHome/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 0.627451)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("3_qpeyh")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_hjdlt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dy6fb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vt7mv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hn62e")
+text = "Resume Game"
+icon_alignment = 1
+
+[node name="OptionsButton" type="Button" parent="PauseHome/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 0.627451)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("3_qpeyh")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_hjdlt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dy6fb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vt7mv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hn62e")
+text = "Options"
+
+[node name="Filler2" type="Label" parent="PauseHome/VBoxContainer"]
+layout_mode = 2
+text = "
+
+"
+
+[node name="GoBackButton" type="Button" parent="PauseHome/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 0.627451)
+theme_override_fonts/font = ExtResource("3_qpeyh")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_0atcn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gnr5n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j3hwl")
+theme_override_styles/focus = SubResource("StyleBoxFlat_f0i6c")
+text = "Main Menu"
+
+[node name="PauseOptions" parent="." instance=ExtResource("4_lldg4")]
+layout_mode = 1
+
+[node name="ColorRect" parent="PauseOptions" index="0"]
+custom_minimum_size = Vector2(0, 500)
+offset_top = -206.5
+offset_bottom = 206.5
+
+[node name="Options" parent="PauseOptions/VBoxContainer" index="0"]
+theme_override_font_sizes/font_size = 65
+
+[node name="Music" parent="PauseOptions/VBoxContainer/HorizontalOptions/VAudio" index="1"]
+theme_override_font_sizes/font_size = 40
+
+[node name="MusicSlider" parent="PauseOptions/VBoxContainer/HorizontalOptions/VAudio" index="2"]
+max_value = 10.0
+step = 0.01
+
+[node name="SoundEffects" parent="PauseOptions/VBoxContainer/HorizontalOptions/VAudio" index="3"]
+theme_override_font_sizes/font_size = 40
+
+[node name="EffectsSlider" parent="PauseOptions/VBoxContainer/HorizontalOptions/VAudio" index="4"]
+max_value = 8.0
+step = 0.01
+
+[node name="ScreenButton" parent="PauseOptions/VBoxContainer/HorizontalOptions/VScreen" index="1"]
+theme_override_font_sizes/font_size = 40
+
+[node name="Filler" parent="PauseOptions/VBoxContainer/HorizontalOptions/VScreen" index="2"]
+text = "
+
+
+
+"
+
+[node name="GoBackToPause" parent="PauseOptions/VBoxContainer" index="3"]
+theme_override_font_sizes/font_size = 35
+
+[connection signal="pressed" from="PauseHome/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PauseHome/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="PauseHome/VBoxContainer/GoBackButton" to="." method="_on_go_back_button_pressed"]
+[connection signal="toggled" from="PauseOptions/VBoxContainer/HorizontalOptions/VScreen/ScreenButton" to="." method="_on_screen_button_toggled"]
+[connection signal="pressed" from="PauseOptions/VBoxContainer/GoBackToPause" to="." method="_on_go_back_to_pause_pressed"]
+
+[editable path="PauseOptions"]

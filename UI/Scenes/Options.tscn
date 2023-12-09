@@ -1,0 +1,209 @@
+[gd_scene load_steps=16 format=3 uid="uid://dy6466oqnqtbu"]
+
+[ext_resource type="Script" path="res://UI/Scripts/Options.gd" id="1_utp34"]
+[ext_resource type="AudioStream" uid="uid://c7x82jgtxg71v" path="res://Assets/UI/Audio/Sfx/EditedAudio.mp3" id="2_cm4op"]
+[ext_resource type="VideoStream" path="res://Assets/UI/Background/cave.ogv" id="3_kxks3"]
+[ext_resource type="Script" path="res://UI/Scripts/VideoStreamPlayer.gd" id="4_uwigl"]
+[ext_resource type="FontFile" uid="uid://dsr4l3oqi2l2q" path="res://Assets/UI/Fonts/ccoverbyteoffregular.ttf" id="5_dophu"]
+[ext_resource type="Script" path="res://UI/Scripts/SoundSlider.gd" id="6_7g4xg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ofxic"]
+line_spacing = 20.0
+font_size = 75
+shadow_color = Color(0, 0, 0, 0.992157)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ggk10"]
+line_spacing = 10.0
+font = ExtResource("5_dophu")
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_6mf2w"]
+line_spacing = 10.0
+font = ExtResource("5_dophu")
+font_size = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8rmt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wksn1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_183rg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mtkf6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qhcd"]
+bg_color = Color(0, 0, 0, 0.329412)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kticw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_utp34")
+stream = ExtResource("2_cm4op")
+
+[node name="Background" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_kxks3")
+expand = true
+script = ExtResource("4_uwigl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -110.5
+offset_right = 95.0
+offset_bottom = 110.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionsLabel" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Options" type="Label" parent="VBoxContainer/OptionsLabel"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_dophu")
+theme_override_font_sizes/font_size = 80
+text = "Options"
+label_settings = SubResource("LabelSettings_ofxic")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HorizontalOptions" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VAudio" type="VBoxContainer" parent="VBoxContainer/HorizontalOptions"]
+layout_mode = 2
+
+[node name="Audio" type="Label" parent="VBoxContainer/HorizontalOptions/VAudio"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_dophu")
+theme_override_font_sizes/font_size = 60
+text = "Audio
+"
+label_settings = SubResource("LabelSettings_ggk10")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="Label" parent="VBoxContainer/HorizontalOptions/VAudio"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("5_dophu")
+theme_override_font_sizes/font_size = 40
+text = "Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer/HorizontalOptions/VAudio"]
+layout_mode = 2
+max_value = 10.0
+step = 0.01
+script = ExtResource("6_7g4xg")
+bus_name = "Music"
+
+[node name="SoundEffects" type="Label" parent="VBoxContainer/HorizontalOptions/VAudio"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("5_dophu")
+theme_override_font_sizes/font_size = 40
+text = "
+Sound Effects"
+
+[node name="EffectsSlider" type="HSlider" parent="VBoxContainer/HorizontalOptions/VAudio"]
+layout_mode = 2
+max_value = 8.0
+step = 0.01
+script = ExtResource("6_7g4xg")
+stream = ExtResource("2_cm4op")
+bus_name = "sfx"
+
+[node name="VScreen" type="VBoxContainer" parent="VBoxContainer/HorizontalOptions"]
+layout_mode = 2
+
+[node name="Screen" type="Label" parent="VBoxContainer/HorizontalOptions/VScreen"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_dophu")
+theme_override_font_sizes/font_size = 60
+text = "Screen
+"
+label_settings = SubResource("LabelSettings_6mf2w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScreenButton" type="CheckButton" parent="VBoxContainer/HorizontalOptions/VScreen"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("5_dophu")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_e8rmt")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wksn1")
+text = "Fullscreen
+"
+alignment = 1
+
+[node name="Filler" type="Label" parent="VBoxContainer/HorizontalOptions/VScreen"]
+layout_mode = 2
+text = "
+
+
+"
+
+[node name="Filler" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "
+
+"
+
+[node name="GoBackLabel" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GoBackButton" type="Button" parent="VBoxContainer/GoBackLabel"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 0.627451)
+theme_override_fonts/font = ExtResource("5_dophu")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_183rg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mtkf6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6qhcd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_kticw")
+text = "  Go back  "
+
+[connection signal="toggled" from="VBoxContainer/HorizontalOptions/VScreen/ScreenButton" to="." method="_on_screen_button_toggled"]
+[connection signal="pressed" from="VBoxContainer/GoBackLabel/GoBackButton" to="." method="_on_go_back_button_pressed"]

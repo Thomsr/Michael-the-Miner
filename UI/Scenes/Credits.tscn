@@ -1,0 +1,166 @@
+[gd_scene load_steps=11 format=3 uid="uid://btavn3yalr8a1"]
+
+[ext_resource type="Script" path="res://UI/Scripts/Credits.gd" id="1_u4hij"]
+[ext_resource type="AudioStream" uid="uid://c7x82jgtxg71v" path="res://Assets/UI/Audio/Sfx/EditedAudio.mp3" id="2_o6k3e"]
+[ext_resource type="VideoStream" path="res://Assets/UI/Background/cave.ogv" id="3_blpnd"]
+[ext_resource type="Script" path="res://UI/Scripts/VideoStreamPlayer.gd" id="4_evyv5"]
+[ext_resource type="FontFile" uid="uid://dsr4l3oqi2l2q" path="res://Assets/UI/Fonts/ccoverbyteoffregular.ttf" id="5_8fxt7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sh5ai"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4leni"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mn4a"]
+bg_color = Color(0, 0, 0, 0.329412)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yg2g7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7a5gf"]
+bg_color = Color(0, 0, 0, 0.443137)
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u4hij")
+stream = ExtResource("2_o6k3e")
+
+[node name="Background" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_blpnd")
+expand = true
+script = ExtResource("4_evyv5")
+
+[node name="GoBackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.111
+anchor_right = 0.5
+anchor_bottom = 0.111
+offset_left = -80.0
+offset_top = 0.071991
+offset_right = 72.0
+offset_bottom = 33.072
+grow_horizontal = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 0.627451)
+theme_override_fonts/font = ExtResource("5_8fxt7")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_sh5ai")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4leni")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7mn4a")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yg2g7")
+text = "  Go back  "
+
+[node name="CreditContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(700, 700)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -354.0
+offset_top = -290.0
+offset_right = 354.0
+offset_bottom = 410.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7a5gf")
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditContainer"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Programmers" type="Label" parent="CreditContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_8fxt7")
+theme_override_font_sizes/font_size = 35
+text = "Programmers"
+horizontal_alignment = 1
+
+[node name="ProgrammerDetails" type="Label" parent="CreditContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_8fxt7")
+theme_override_font_sizes/font_size = 25
+text = "literally all of us i think?
+
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Assets" type="Label" parent="CreditContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_8fxt7")
+theme_override_font_sizes/font_size = 35
+text = "Assets
+"
+horizontal_alignment = 1
+
+[node name="AssetDetails" type="Label" parent="CreditContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_8fxt7")
+theme_override_font_sizes/font_size = 25
+text = "Asset Library: \"Pixel Fantasy Caves\" by Szadi Art on itch.io
+UI Background: \"Pixel Art Crystal Cave\" by kristyglas on DeviantArt
+Fire Animation - 	\"Pixel Art FX Sprites\" by brullov on itch.io
+
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Fonts" type="Label" parent="CreditContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_8fxt7")
+theme_override_font_sizes/font_size = 35
+text = "Fonts"
+horizontal_alignment = 1
+
+[node name="FontDetails" type="Label" parent="CreditContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_8fxt7")
+theme_override_font_sizes/font_size = 25
+text = "\"CC OverByte\" by Comicraft on FontSquirrel
+
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Sounds" type="Label" parent="CreditContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_8fxt7")
+theme_override_font_sizes/font_size = 35
+text = "Sounds"
+horizontal_alignment = 1
+
+[node name="SoundsDetails" type="Label" parent="CreditContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_8fxt7")
+theme_override_font_sizes/font_size = 25
+text = "SFX - \"Interface\" by UNIVERSFIELD from Pixabay
+ "
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="GoBackButton" to="." method="_on_go_back_button_pressed"]
