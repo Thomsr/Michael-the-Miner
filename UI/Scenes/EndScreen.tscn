@@ -1,0 +1,261 @@
+[gd_scene load_steps=24 format=3 uid="uid://v0vjldbny4wc"]
+
+[ext_resource type="Script" path="res://UI/Scripts/EndScreenCredits.gd" id="1_ochdy"]
+[ext_resource type="AudioStream" uid="uid://c7x82jgtxg71v" path="res://Assets/UI/Audio/Sfx/EditedAudio.mp3" id="2_7ixsb"]
+[ext_resource type="Texture2D" uid="uid://cjvseffiyklap" path="res://Assets/UI/Background/backgroundOutside.jpeg" id="3_kf3c8"]
+[ext_resource type="Texture2D" uid="uid://dupebai8jka5g" path="res://Assets/UI/Textures/Player/run1.png" id="4_t1dg8"]
+[ext_resource type="Texture2D" uid="uid://cvfh2pp2o1h4w" path="res://Assets/UI/Textures/Player/run2.png" id="5_v5ap1"]
+[ext_resource type="Texture2D" uid="uid://dv5ifnmx6xad8" path="res://Assets/UI/Textures/Player/run3.png" id="6_6vdw8"]
+[ext_resource type="Texture2D" uid="uid://b2mmgfhfi6qmk" path="res://Assets/UI/Textures/Player/run4.png" id="7_7ueuw"]
+[ext_resource type="Texture2D" uid="uid://0yplpdeewgk8" path="res://Assets/UI/Textures/Player/run5.png" id="8_o7kq5"]
+[ext_resource type="Texture2D" uid="uid://kcw0aegg7gey" path="res://Assets/UI/Textures/Player/run6.png" id="9_f2tp0"]
+[ext_resource type="Texture2D" uid="uid://b1jr10jx7bdr0" path="res://Assets/UI/Textures/Player/run7.png" id="10_6fa1m"]
+[ext_resource type="Texture2D" uid="uid://df2cwbi3oj1f1" path="res://Assets/UI/Textures/Player/run8.png" id="11_h27sx"]
+[ext_resource type="Texture2D" uid="uid://c6wtyuskfnreb" path="res://Assets/UI/Textures/Pebbles/frame_0_delay-0.1s.png" id="12_txggs"]
+[ext_resource type="Texture2D" uid="uid://bdyyfjq6rwlox" path="res://Assets/UI/Textures/Pebbles/frame_1_delay-0.1s.png" id="13_ff313"]
+[ext_resource type="Texture2D" uid="uid://b01errml1g3t5" path="res://Assets/UI/Textures/Pebbles/frame_2_delay-0.1s.png" id="14_cck5x"]
+[ext_resource type="Texture2D" uid="uid://1lmnj80uvhh6" path="res://Assets/UI/Textures/Pebbles/frame_3_delay-0.1s.png" id="15_gspiq"]
+[ext_resource type="FontFile" uid="uid://dsr4l3oqi2l2q" path="res://Assets/UI/Fonts/ccoverbyteoffregular.ttf" id="16_07ofu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fbvvr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_t1dg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v5ap1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6vdw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7ueuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_o7kq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_f2tp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6fa1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_h27sx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cll2u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_txggs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ff313")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cck5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_gspiq")
+}],
+"loop": true,
+"name": &"PebblesRun",
+"speed": 3.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3aeim"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jtmc"]
+bg_color = Color(0, 0, 0, 0.172549)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5w2y"]
+bg_color = Color(0, 0, 0, 0.329412)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqjnb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ph8fv"]
+bg_color = Color(0, 0, 0, 0.443137)
+
+[node name="EndScreenCredits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ochdy")
+stream = ExtResource("2_7ixsb")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -925.0
+offset_top = -302.0
+offset_right = 35.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_kf3c8")
+
+[node name="Michael" type="AnimatedSprite2D" parent="."]
+position = Vector2(1319, 744)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_fbvvr")
+autoplay = "default"
+
+[node name="Pebbles" type="AnimatedSprite2D" parent="."]
+position = Vector2(1488, 814)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_cll2u")
+animation = &"PebblesRun"
+autoplay = "PebblesRun"
+frame_progress = 0.552916
+
+[node name="TheEnd" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 96.0
+offset_top = -276.0
+offset_right = 613.0
+offset_bottom = -174.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("16_07ofu")
+theme_override_font_sizes/font_size = 90
+text = "   The End   "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoBackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.858
+anchor_top = 0.606
+anchor_right = 0.858
+anchor_bottom = 0.606
+offset_left = -617.36
+offset_top = -270.48
+offset_right = -53.36
+offset_bottom = -209.48
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 0.627451)
+theme_override_fonts/font = ExtResource("16_07ofu")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_3aeim")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5jtmc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n5w2y")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yqjnb")
+text = "  Back to Main Menu  "
+
+[node name="CreditsContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(650, 900)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 59.0
+offset_top = -450.0
+offset_right = 609.0
+offset_bottom = 450.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ph8fv")
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsContainer"]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+
+[node name="Programmers" type="Label" parent="CreditsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_07ofu")
+theme_override_font_sizes/font_size = 40
+text = "
+Programmers"
+horizontal_alignment = 1
+
+[node name="ProgrammerDetails" type="Label" parent="CreditsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_07ofu")
+theme_override_font_sizes/font_size = 30
+text = "literally all of us i think?
+
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Assets" type="Label" parent="CreditsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_07ofu")
+theme_override_font_sizes/font_size = 40
+text = "Assets
+"
+horizontal_alignment = 1
+
+[node name="AssetDetails" type="Label" parent="CreditsContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_07ofu")
+theme_override_font_sizes/font_size = 30
+text = "Asset Library: \"Pixel Fantasy Caves\" by Szadi Art on itch.io
+UI Background: \"Pixel Art Crystal Cave\" by kristyglas on DeviantArt
+Fire Animation - 	\"Pixel Art FX Sprites\" by brullov on itch.io
+Pebbles - \"Annoying dog animation pixel art\" by Tha-Jackable on Deviant Art
+End Scren Background: \"Pixel art game scene in snow with pine trees and clouds 8bit background\" by Kaleb on Adobe.
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Fonts" type="Label" parent="CreditsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_07ofu")
+theme_override_font_sizes/font_size = 40
+text = "Fonts"
+horizontal_alignment = 1
+
+[node name="FontDetails" type="Label" parent="CreditsContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_07ofu")
+theme_override_font_sizes/font_size = 30
+text = "\"CC OverByte\" by Comicraft on FontSquirrel
+
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Sounds" type="Label" parent="CreditsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_07ofu")
+theme_override_font_sizes/font_size = 40
+text = "Sounds"
+horizontal_alignment = 1
+
+[node name="SoundsDetails" type="Label" parent="CreditsContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_07ofu")
+theme_override_font_sizes/font_size = 30
+text = "SFX - \"Interface\" by UNIVERSFIELD from Pixabay
+ "
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="GoBackButton" to="." method="_on_go_back_button_pressed"]

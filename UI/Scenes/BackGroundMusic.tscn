@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhdmtju83cdxs"]
+
+[ext_resource type="AudioStream" uid="uid://65xm46dk6p7l" path="res://Assets/UI/Audio/Slower-Tempo-2020-03-22_-_A_Bit_Of_Hope_-_David_Fesliyan.mp3" id="1_u3bi7"]
+[ext_resource type="Script" path="res://UI/Scripts/BackGroundMusic.gd" id="2_yotmn"]
+
+[node name="BackGroundMusic" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_u3bi7")
+volume_db = -6.0
+bus = &"Music"
+script = ExtResource("2_yotmn")

@@ -1,0 +1,184 @@
+[gd_scene load_steps=12 format=3 uid="uid://cjl8alxk22xlp"]
+
+[ext_resource type="FontFile" uid="uid://dsr4l3oqi2l2q" path="res://Assets/UI/Fonts/ccoverbyteoffregular.ttf" id="2_nenh2"]
+[ext_resource type="Script" path="res://UI/Scripts/SoundSlider.gd" id="3_c36ao"]
+[ext_resource type="AudioStream" uid="uid://c7x82jgtxg71v" path="res://Assets/UI/Audio/Sfx/EditedAudio.mp3" id="4_4ywj3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dv4ni"]
+line_spacing = 10.0
+font = ExtResource("2_nenh2")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_13d72"]
+line_spacing = 10.0
+font = ExtResource("2_nenh2")
+font_size = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oc6x4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ons6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xfqtq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6pys1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ohqb"]
+bg_color = Color(0, 0, 0, 0.329412)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mh8xt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[node name="PauseOptions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -195.0
+offset_right = 450.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.329412)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -402.0
+offset_top = -176.0
+offset_right = 402.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Options" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nenh2")
+theme_override_font_sizes/font_size = 50
+text = "   Options   "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HorizontalOptions" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VAudio" type="VBoxContainer" parent="VBoxContainer/HorizontalOptions"]
+layout_mode = 2
+
+[node name="Audio" type="Label" parent="VBoxContainer/HorizontalOptions/VAudio"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_nenh2")
+theme_override_font_sizes/font_size = 60
+text = "Audio
+"
+label_settings = SubResource("LabelSettings_dv4ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="Label" parent="VBoxContainer/HorizontalOptions/VAudio"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_nenh2")
+theme_override_font_sizes/font_size = 30
+text = "Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer/HorizontalOptions/VAudio"]
+layout_mode = 2
+max_value = 20.0
+script = ExtResource("3_c36ao")
+bus_name = "Music"
+
+[node name="SoundEffects" type="Label" parent="VBoxContainer/HorizontalOptions/VAudio"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_nenh2")
+theme_override_font_sizes/font_size = 30
+text = "
+Sound Effects"
+
+[node name="EffectsSlider" type="HSlider" parent="VBoxContainer/HorizontalOptions/VAudio"]
+layout_mode = 2
+max_value = 6.0
+step = 0.001
+script = ExtResource("3_c36ao")
+stream = ExtResource("4_4ywj3")
+bus_name = "sfx"
+
+[node name="VScreen" type="VBoxContainer" parent="VBoxContainer/HorizontalOptions"]
+layout_mode = 2
+
+[node name="Screen" type="Label" parent="VBoxContainer/HorizontalOptions/VScreen"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_nenh2")
+theme_override_font_sizes/font_size = 60
+text = "Screen
+"
+label_settings = SubResource("LabelSettings_13d72")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScreenButton" type="CheckButton" parent="VBoxContainer/HorizontalOptions/VScreen"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_nenh2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_oc6x4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0ons6")
+text = "Fullscreen
+"
+alignment = 1
+
+[node name="Filler" type="Label" parent="VBoxContainer/HorizontalOptions/VScreen"]
+layout_mode = 2
+text = "
+
+
+"
+
+[node name="Filler" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "
+"
+
+[node name="GoBackToPause" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 0.627451)
+theme_override_fonts/font = ExtResource("2_nenh2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_xfqtq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6pys1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5ohqb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mh8xt")
+text = "  Go back  "
