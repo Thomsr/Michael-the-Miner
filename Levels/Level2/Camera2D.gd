@@ -13,4 +13,3 @@ func _process(_delta):
 		global_position.y = -1080.0;
 	else:
 		global_position.y = 0.0;
-		
