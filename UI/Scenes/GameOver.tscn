@@ -91,7 +91,7 @@ text = "
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_w425r")
 theme_override_font_sizes/font_size = 45
-text = "Play Again?"
+text = "Try Level Again?"
 horizontal_alignment = 1
 vertical_alignment = 1
 

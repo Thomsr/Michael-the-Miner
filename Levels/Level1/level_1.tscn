@@ -2938,7 +2938,7 @@ process_mode = 3
 visible = false
 
 [node name="Player" parent="." instance=ExtResource("1_qdk1l")]
-position = Vector2(191, 875)
+position = Vector2(1451, 232)
 scale = Vector2(2, 2)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
