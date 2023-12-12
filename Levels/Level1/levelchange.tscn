@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://wetxfr2fnpws"]
+
+[ext_resource type="Script" path="res://Levels/Level1/levelchange.gd" id="1_es30h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ndbw"]
+size = Vector2(69, 131)
+
+[node name="levelchange" type="Area2D"]
+script = ExtResource("1_es30h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24.5, -55.5)
+shape = SubResource("RectangleShape2D_7ndbw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
