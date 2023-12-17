@@ -22,6 +22,8 @@ func _process(delta):
 #Using escape to pause and unpause
 func pauseMenu():
 	if paused:
+		Home.visible = true
+		Options.visible = false
 		self.hide()
 		get_tree().paused = false
 	else:

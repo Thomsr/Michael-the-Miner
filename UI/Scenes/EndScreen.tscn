@@ -195,7 +195,10 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("16_07ofu")
 theme_override_font_sizes/font_size = 30
-text = "literally all of us i think?
+text = "Mirac Benli
+Thalia Nanhekhan
+Alissia Reemeijer
+Yhomas Rooskens
 
 "
 horizontal_alignment = 1
@@ -219,7 +222,8 @@ UI Background: \"Pixel Art Crystal Cave\" by kristyglas on DeviantArt
 Fire Animation - 	\"Pixel Art FX Sprites\" by brullov on itch.io
 Pebbles - \"Annoying dog animation pixel art\" by Tha-Jackable on Deviant Art
 End Screen Background: \"Pixel art game scene in snow with pine trees and clouds 8bit background\" by Kaleb on Adobe
-"
+Space bar - \"spacebar\" by Anonymous on pixilart.com
+Arrow Keys - \"Arrow Key Pixel Art\" by unknown on pngkit.com"
 horizontal_alignment = 1
 autowrap_mode = 2
 

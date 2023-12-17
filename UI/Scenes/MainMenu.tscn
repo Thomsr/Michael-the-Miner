@@ -1,10 +1,80 @@
-[gd_scene load_steps=24 format=3 uid="uid://c4bhplobiqm8j"]
+[gd_scene load_steps=38 format=3 uid="uid://c4bhplobiqm8j"]
 
 [ext_resource type="Script" path="res://UI/Scripts/MainMenu.gd" id="1_vnya5"]
 [ext_resource type="AudioStream" uid="uid://c7x82jgtxg71v" path="res://Assets/UI/Audio/Sfx/EditedAudio.mp3" id="2_v0oe5"]
 [ext_resource type="VideoStream" path="res://Assets/UI/Background/cave.ogv" id="3_mklw6"]
 [ext_resource type="Script" path="res://UI/Scripts/VideoStreamPlayer.gd" id="4_58et6"]
 [ext_resource type="FontFile" uid="uid://dsr4l3oqi2l2q" path="res://Assets/UI/Fonts/ccoverbyteoffregular.ttf" id="5_u6hpy"]
+[ext_resource type="Texture2D" uid="uid://dupebai8jka5g" path="res://Assets/UI/Textures/Player/run1.png" id="6_lbtx8"]
+[ext_resource type="Texture2D" uid="uid://cvfh2pp2o1h4w" path="res://Assets/UI/Textures/Player/run2.png" id="7_3epwn"]
+[ext_resource type="Texture2D" uid="uid://dv5ifnmx6xad8" path="res://Assets/UI/Textures/Player/run3.png" id="8_6246c"]
+[ext_resource type="Texture2D" uid="uid://b2mmgfhfi6qmk" path="res://Assets/UI/Textures/Player/run4.png" id="9_36hbl"]
+[ext_resource type="Texture2D" uid="uid://0yplpdeewgk8" path="res://Assets/UI/Textures/Player/run5.png" id="10_ho0nw"]
+[ext_resource type="Texture2D" uid="uid://d0xfoptse7fvv" path="res://Assets/UI/Textures/pixil-frame-0 (1).png" id="11_l2xno"]
+[ext_resource type="Texture2D" uid="uid://kcw0aegg7gey" path="res://Assets/UI/Textures/Player/run6.png" id="11_wvs0s"]
+[ext_resource type="Texture2D" uid="uid://b1jr10jx7bdr0" path="res://Assets/UI/Textures/Player/run7.png" id="12_2y3ff"]
+[ext_resource type="Texture2D" uid="uid://0ej7asptmmpl" path="res://Assets/UI/Textures/pixil-frame-0 (3).png" id="12_ulrvd"]
+[ext_resource type="Texture2D" uid="uid://df2cwbi3oj1f1" path="res://Assets/UI/Textures/Player/run8.png" id="13_l1f0i"]
+
+[sub_resource type="Animation" id="Animation_d46c7"]
+resource_name = "recommend"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(437, 378), Vector2(437, 383)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ey47s"]
+_data = {
+"recommend": SubResource("Animation_d46c7")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_e76pw"]
+font = ExtResource("5_u6hpy")
+font_size = 26
+font_color = Color(0.909804, 0.909804, 0.909804, 1)
+outline_color = Color(0.756863, 0.756863, 0.756863, 1)
+shadow_color = Color(0.180392, 0.180392, 0.180392, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_08oet"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_lbtx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3epwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6246c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_36hbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ho0nw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wvs0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2y3ff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_l1f0i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7cdtx"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -80,6 +150,50 @@ grow_vertical = 2
 script = ExtResource("1_vnya5")
 stream = ExtResource("2_v0oe5")
 
+[node name="LabelPlayer" type="AnimationPlayer" parent="."]
+autoplay = "recommend"
+libraries = {
+"": SubResource("AnimationLibrary_ey47s")
+}
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+offset_left = 437.0
+offset_top = 378.0
+offset_right = 906.0
+offset_bottom = 411.0
+rotation = -0.0523599
+text = "Full screen is a recommended setting!"
+label_settings = SubResource("LabelSettings_e76pw")
+
+[node name="Details" type="CanvasLayer" parent="."]
+scale = Vector2(0.9, 0.9)
+transform = Transform2D(0.9, 0, 0, 0.9, 0, 0)
+
+[node name="Michael" type="AnimatedSprite2D" parent="Details"]
+z_index = 1
+position = Vector2(258.278, 938.667)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_08oet")
+autoplay = "default"
+
+[node name="MoveKeys" type="TextureRect" parent="Details"]
+offset_left = 67.7778
+offset_top = 1123.67
+offset_right = 467.777
+offset_bottom = 1584.67
+rotation = -1.5708
+scale = Vector2(0.165, 0.298)
+texture = ExtResource("11_l2xno")
+
+[node name="SpaceBar" type="TextureRect" parent="Details"]
+offset_left = 136.667
+offset_top = 895.889
+offset_right = 236.667
+offset_bottom = 995.889
+scale = Vector2(4, 4)
+texture = ExtResource("12_ulrvd")
+
 [node name="Background" type="VideoStreamPlayer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -95,14 +209,14 @@ script = ExtResource("4_58et6")
 [node name="CreditsButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.02
-anchor_top = 0.95
-anchor_right = 0.02
-anchor_bottom = 0.95
-offset_left = 22.6
-offset_top = -49.0
-offset_right = 141.6
-offset_bottom = -10.0
+anchor_left = 0.973
+anchor_top = 0.941
+anchor_right = 0.973
+anchor_bottom = 0.941
+offset_left = -118.16
+offset_top = -39.28
+offset_right = 0.839844
+offset_bottom = -0.280029
 theme_override_colors/font_hover_color = Color(1, 1, 1, 0.627451)
 theme_override_fonts/font = ExtResource("5_u6hpy")
 theme_override_font_sizes/font_size = 35

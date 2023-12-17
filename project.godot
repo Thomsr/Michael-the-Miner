@@ -29,6 +29,7 @@ BackGroundMusic="*res://UI/Scenes/BackGroundMusic.tscn"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/stretch/aspect="expand"
 
 [input]
 
