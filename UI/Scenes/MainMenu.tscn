@@ -18,6 +18,7 @@
 
 [sub_resource type="Animation" id="Animation_d46c7"]
 resource_name = "recommend"
+length = 1.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -26,10 +27,10 @@ tracks/0/path = NodePath("Label:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(437, 378), Vector2(437, 383)]
+"values": [Vector2(1128, 360), Vector2(1128, 370)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ey47s"]
@@ -158,11 +159,12 @@ libraries = {
 
 [node name="Label" type="Label" parent="."]
 z_index = 1
-offset_left = 437.0
-offset_top = 378.0
-offset_right = 906.0
-offset_bottom = 411.0
-rotation = -0.0523599
+layout_mode = 0
+offset_left = 1128.0
+offset_top = 360.0
+offset_right = 1597.0
+offset_bottom = 393.0
+rotation = 0.0523599
 text = "Full screen is a recommended setting!"
 label_settings = SubResource("LabelSettings_e76pw")
 
