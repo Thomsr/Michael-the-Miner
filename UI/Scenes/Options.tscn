@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dy6466oqnqtbu"]
+[gd_scene load_steps=17 format=3 uid="uid://dy6466oqnqtbu"]
 
 [ext_resource type="Script" path="res://UI/Scripts/Options.gd" id="1_utp34"]
 [ext_resource type="AudioStream" uid="uid://c7x82jgtxg71v" path="res://Assets/UI/Audio/Sfx/EditedAudio.mp3" id="2_cm4op"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://UI/Scripts/VideoStreamPlayer.gd" id="4_uwigl"]
 [ext_resource type="FontFile" uid="uid://dsr4l3oqi2l2q" path="res://Assets/UI/Fonts/ccoverbyteoffregular.ttf" id="5_dophu"]
 [ext_resource type="Script" path="res://UI/Scripts/SoundSlider.gd" id="6_7g4xg"]
+[ext_resource type="Script" path="res://UI/Scripts/ScreenButton.gd" id="7_luh07"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ofxic"]
 line_spacing = 20.0
@@ -175,6 +176,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_wksn1")
 text = "Fullscreen
 "
 alignment = 1
+script = ExtResource("7_luh07")
 
 [node name="Filler" type="Label" parent="VBoxContainer/HorizontalOptions/VScreen"]
 layout_mode = 2

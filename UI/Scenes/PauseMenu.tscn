@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://boxpqa0m0ihcf"]
+[gd_scene load_steps=14 format=3 uid="uid://boxpqa0m0ihcf"]
 
 [ext_resource type="Script" path="res://UI/Scripts/PauseMenu.gd" id="1_p2axn"]
 [ext_resource type="AudioStream" uid="uid://c7x82jgtxg71v" path="res://Assets/UI/Audio/Sfx/EditedAudio.mp3" id="2_8dabb"]
 [ext_resource type="FontFile" uid="uid://dsr4l3oqi2l2q" path="res://Assets/UI/Fonts/ccoverbyteoffregular.ttf" id="3_qpeyh"]
 [ext_resource type="PackedScene" uid="uid://cjl8alxk22xlp" path="res://UI/Scenes/PauseOptions.tscn" id="4_lldg4"]
+[ext_resource type="Script" path="res://UI/Scripts/ScreenButton.gd" id="5_dgoqa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjdlt"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -172,6 +173,7 @@ step = 0.01
 
 [node name="ScreenButton" parent="PauseOptions/VBoxContainer/HorizontalOptions/VScreen" index="1"]
 theme_override_font_sizes/font_size = 40
+script = ExtResource("5_dgoqa")
 
 [node name="Filler" parent="PauseOptions/VBoxContainer/HorizontalOptions/VScreen" index="2"]
 text = "
