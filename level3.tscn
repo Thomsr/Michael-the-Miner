@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://beto4f5c2i1ya"]
+[gd_scene load_steps=23 format=3 uid="uid://beto4f5c2i1ya"]
 
 [ext_resource type="Texture2D" uid="uid://rg1s7kn274nt" path="res://Assets/Cave/background4a.png" id="1_bn28f"]
 [ext_resource type="PackedScene" uid="uid://c5emhqsb5jv2r" path="res://Objects/Player/player.tscn" id="2_1uyc6"]
@@ -6,7 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://cnhkep3bagw6q" path="res://Objects/Background/background.tscn" id="4_hslpk"]
 [ext_resource type="Script" path="res://Levels/Level3/Camera2D_2.gd" id="5_mabvr"]
 [ext_resource type="Texture2D" uid="uid://bstgtmhs8v63r" path="res://Assets/Cave/props1.png" id="6_m82om"]
+[ext_resource type="Script" path="res://Levels/Level3/spikes.gd" id="6_ymcot"]
 [ext_resource type="Script" path="res://Levels/Level3/deur.gd" id="7_7602e"]
+[ext_resource type="Texture2D" uid="uid://didqh8a5ggbp2" path="res://Assets/level3/KeyIcons.png" id="9_mv5cn"]
+[ext_resource type="Script" path="res://Levels/Level3/keycount.gd" id="10_672yv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fawy0"]
 texture = ExtResource("3_cu0ol")
@@ -3037,10 +3040,10 @@ tracks/6/path = NodePath("AnimatableBody2D5_2:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 1, 1.5, 2.2, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 1, 1.5, 2.2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(3730, 745), Vector2(3711, 382), Vector2(3736, 406), Vector2(3734, 595.333), Vector2(3730, 745), Vector2(3730, 880), Vector2(3730, 745)]
+"values": [Vector2(3730, 745), Vector2(3711, 382), Vector2(3711, 595), Vector2(3721, 745), Vector2(3733, 876), Vector2(3730, 745)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3mrvu"]
@@ -3055,7 +3058,21 @@ size = Vector2(18.66, 63.9487)
 height = 36.9918
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1j01"]
-size = Vector2(20, 16.8359)
+size = Vector2(38.7061, 20.4813)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsn5o"]
+size = Vector2(30.0739, 2.25573)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdbrj"]
+size = Vector2(3857, 1100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7wos"]
+size = Vector2(3.73633, 4.7171)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qr5u8"]
+font_size = 40
+outline_size = 3
+outline_color = Color(0.501961, 0.623529, 0.886275, 1)
 
 [node name="level3" type="Node2D"]
 
@@ -3093,7 +3110,7 @@ layer_1/tile_data = PackedInt32Array(1638445, 3670016, 6, 1703981, 3670016, 7, 1
 [node name="Background" parent="." instance=ExtResource("4_hslpk")]
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(1267.13, 865.497)
+position = Vector2(1267.63, 717.071)
 scale = Vector2(0.997762, 0.814256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
@@ -3110,7 +3127,7 @@ region_enabled = true
 region_rect = Rect2(530, 237, 32, 18)
 
 [node name="AnimatableBody2D2" type="AnimatableBody2D" parent="."]
-position = Vector2(1024.45, 431.98)
+position = Vector2(762.529, 441.962)
 scale = Vector2(0.997762, 0.814256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D2"]
@@ -3127,7 +3144,7 @@ region_enabled = true
 region_rect = Rect2(530, 237, 32, 18)
 
 [node name="AnimatableBody2D3" type="AnimatableBody2D" parent="."]
-position = Vector2(1252.97, 396)
+position = Vector2(1447.68, 396)
 scale = Vector2(0.997762, 0.814256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D3"]
@@ -3144,7 +3161,7 @@ region_enabled = true
 region_rect = Rect2(530, 237, 32, 18)
 
 [node name="AnimatableBody2D4" type="AnimatableBody2D" parent="."]
-position = Vector2(2255, 601.373)
+position = Vector2(2255, 476.683)
 scale = Vector2(0.997762, 0.814256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D4"]
@@ -3161,7 +3178,7 @@ region_enabled = true
 region_rect = Rect2(530, 237, 32, 18)
 
 [node name="AnimatableBody2D5" type="AnimatableBody2D" parent="."]
-position = Vector2(3199, 769.352)
+position = Vector2(3199, 973.171)
 scale = Vector2(0.997762, 0.814256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D5"]
@@ -3178,7 +3195,7 @@ region_enabled = true
 region_rect = Rect2(530, 237, 32, 18)
 
 [node name="AnimatableBody2D6" type="AnimatableBody2D" parent="."]
-position = Vector2(2560.83, 413.53)
+position = Vector2(2510.54, 490.388)
 scale = Vector2(0.997762, 0.814256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D6"]
@@ -3195,7 +3212,7 @@ region_enabled = true
 region_rect = Rect2(530, 237, 32, 18)
 
 [node name="AnimatableBody2D5_2" type="AnimatableBody2D" parent="."]
-position = Vector2(3721.4, 391.982)
+position = Vector2(3727.1, 811.598)
 scale = Vector2(0.997762, 0.814256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D5_2"]
@@ -3273,132 +3290,138 @@ position = Vector2(966, 542)
 scale = Vector2(1, 1.52)
 script = ExtResource("5_mabvr")
 
-[node name="einddeur" type="Area2D" parent="."]
+[node name="firstpart" type="Area2D" parent="."]
+visible = false
 position = Vector2(1787, 201)
 scale = Vector2(100, -16.998)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="einddeur"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="firstpart"]
 position = Vector2(-8.5, -20.2083)
 shape = SubResource("RectangleShape2D_ofrah")
 
-[node name="spike" type="Node2D" parent="."]
+[node name="spikes" type="Node2D" parent="."]
+position = Vector2(3805, 188)
+script = ExtResource("6_ymcot")
 
-[node name="Sprite2D" type="Sprite2D" parent="spike"]
-position = Vector2(754, 892)
+[node name="spike_area" type="Area2D" parent="spikes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike_area"]
+position = Vector2(-3051, 706)
+scale = Vector2(8.14493, 1.81319)
+shape = SubResource("CapsuleShape2D_ne8e1")
+
+[node name="Sprite2D" type="Sprite2D" parent="spikes/spike_area"]
+position = Vector2(-3052, 712)
 texture = ExtResource("6_m82om")
 region_enabled = true
 region_rect = Rect2(609, 381, 175, 71)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spike"]
-position = Vector2(754, 894)
-scale = Vector2(8.14493, 2.65319)
-shape = SubResource("CapsuleShape2D_ne8e1")
+[node name="spike2" type="StaticBody2D" parent="spikes"]
+position = Vector2(-3052, 712)
 
-[node name="spike2" type="Node2D" parent="."]
-position = Vector2(815, -25)
-
-[node name="Sprite2D" type="Sprite2D" parent="spike2"]
-position = Vector2(773.999, 872)
+[node name="Sprite2D" type="Sprite2D" parent="spikes/spike2"]
+position = Vector2(835.999, -53)
 scale = Vector2(1.62928, 1.47497)
 texture = ExtResource("6_m82om")
 region_enabled = true
 region_rect = Rect2(609, 381, 175, 71)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spike2"]
-position = Vector2(759.999, 880)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike2"]
+position = Vector2(821.999, -45)
 scale = Vector2(15.956, 3.71195)
 shape = SubResource("CapsuleShape2D_ne8e1")
 
-[node name="spike3" type="Node2D" parent="."]
-position = Vector2(-439, -444)
+[node name="spike3" type="StaticBody2D" parent="spikes"]
+position = Vector2(-4244, -632)
 
-[node name="Sprite2D" type="Sprite2D" parent="spike3"]
+[node name="Sprite2D" type="Sprite2D" parent="spikes/spike3"]
 position = Vector2(781, 892)
 texture = ExtResource("6_m82om")
 region_enabled = true
 region_rect = Rect2(219, 359, 116, 69)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spike3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike3"]
 position = Vector2(776, 897)
 scale = Vector2(5.70493, 2.65319)
 shape = SubResource("CapsuleShape2D_ne8e1")
 
-[node name="spike4" type="Node2D" parent="."]
-position = Vector2(2838, 67)
+[node name="spike4" type="StaticBody2D" parent="spikes"]
+position = Vector2(-967, -121)
 
-[node name="Sprite2D" type="Sprite2D" parent="spike4"]
+[node name="Sprite2D" type="Sprite2D" parent="spikes/spike4"]
 position = Vector2(754, 892)
 texture = ExtResource("6_m82om")
 region_enabled = true
 region_rect = Rect2(609, 381, 175, 71)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spike4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike4"]
 position = Vector2(754, 894)
 scale = Vector2(8.14493, 2.65319)
 shape = SubResource("CapsuleShape2D_ne8e1")
 
-[node name="spike5" type="Node2D" parent="."]
-position = Vector2(1439, 162)
+[node name="spike5" type="StaticBody2D" parent="spikes"]
+position = Vector2(-3805, -188)
 
-[node name="Sprite2D" type="Sprite2D" parent="spike5"]
-position = Vector2(754, 892)
+[node name="Sprite2D" type="Sprite2D" parent="spikes/spike5"]
+position = Vector2(2193, 1054)
 texture = ExtResource("6_m82om")
 region_enabled = true
 region_rect = Rect2(801, 360, 88, 61)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spike5"]
-position = Vector2(754, 894)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike5"]
+position = Vector2(2193, 1056)
 scale = Vector2(5.18493, 2.45143)
 shape = SubResource("CapsuleShape2D_ne8e1")
 
-[node name="spike6" type="Node2D" parent="."]
-position = Vector2(1662, 162)
+[node name="spike6" type="StaticBody2D" parent="spikes"]
+position = Vector2(-2143, -26)
 
-[node name="Sprite2D" type="Sprite2D" parent="spike6"]
+[node name="Sprite2D" type="Sprite2D" parent="spikes/spike6"]
 position = Vector2(754, 892)
 texture = ExtResource("6_m82om")
 region_enabled = true
 region_rect = Rect2(103, 371, 101, 59)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spike6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike6"]
 position = Vector2(754, 894)
 scale = Vector2(5.18493, 2.45143)
 shape = SubResource("CapsuleShape2D_ne8e1")
 
-[node name="spike7" type="Node2D" parent="."]
-position = Vector2(1886, 164)
+[node name="spike7" type="StaticBody2D" parent="spikes"]
+position = Vector2(-3805, -188)
 
-[node name="Sprite2D" type="Sprite2D" parent="spike7"]
-position = Vector2(754, 892)
+[node name="Sprite2D" type="Sprite2D" parent="spikes/spike7"]
+position = Vector2(2640, 1056)
 texture = ExtResource("6_m82om")
 region_enabled = true
 region_rect = Rect2(224, 355, 103, 59)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spike7"]
-position = Vector2(754, 894)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike7"]
+position = Vector2(2640, 1058)
 scale = Vector2(5.18493, 2.45143)
 shape = SubResource("CapsuleShape2D_ne8e1")
 
-[node name="spike8" type="Node2D" parent="."]
-position = Vector2(2112, 166)
+[node name="spike8" type="StaticBody2D" parent="spikes"]
+position = Vector2(-3805, -188)
 
-[node name="Sprite2D" type="Sprite2D" parent="spike8"]
-position = Vector2(754, 892)
+[node name="Sprite2D" type="Sprite2D" parent="spikes/spike8"]
+position = Vector2(2866, 1058)
 texture = ExtResource("6_m82om")
 region_enabled = true
 region_rect = Rect2(801, 360, 88, 61)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spike8"]
-position = Vector2(754, 894)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike8"]
+position = Vector2(2866, 1060)
 scale = Vector2(5.18493, 2.45143)
 shape = SubResource("CapsuleShape2D_ne8e1")
 
 [node name="deur" type="Area2D" parent="."]
 position = Vector2(3805, 188)
+scale = Vector2(0.983416, 1)
 script = ExtResource("7_7602e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="deur"]
-position = Vector2(-22, 9)
+position = Vector2(3.24146, 22.5984)
 scale = Vector2(4.89632, 7.46062)
 shape = SubResource("RectangleShape2D_j1j01")
 
@@ -3409,18 +3432,106 @@ texture = ExtResource("3_cu0ol")
 region_enabled = true
 region_rect = Rect2(955, 15, 58, 71)
 
-[connection signal="body_entered" from="einddeur" to="Camera2D_2" method="_on_einddeur_body_entered"]
-[connection signal="body_entered" from="einddeur" to="Camera2D_2" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="einddeur" to="Camera2D_2" method="_on_einddeur_body_exited"]
-[connection signal="body_exited" from="einddeur" to="Camera2D_2" method="_on_area_2d_body_exited"]
-[connection signal="child_entered_tree" from="spike" to="Player" method="_on_spike_child_entered_tree"]
-[connection signal="child_entered_tree" from="spike2" to="Player" method="_on_spike_child_entered_tree"]
-[connection signal="child_entered_tree" from="spike3" to="Player" method="_on_spike_child_entered_tree"]
-[connection signal="child_entered_tree" from="spike4" to="Player" method="_on_spike_child_entered_tree"]
-[connection signal="child_entered_tree" from="spike5" to="Player" method="_on_spike_child_entered_tree"]
-[connection signal="child_entered_tree" from="spike6" to="Player" method="_on_spike_child_entered_tree"]
-[connection signal="child_entered_tree" from="spike7" to="Player" method="_on_spike_child_entered_tree"]
-[connection signal="child_entered_tree" from="spike8" to="Player" method="_on_spike_child_entered_tree"]
-[connection signal="area_shape_entered" from="deur" to="Player" method="_on_deur_area_shape_entered"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="deur"]
+position = Vector2(71.9995, 908.329)
+rotation = -3.14159
+scale = Vector2(5.78571, 975.585)
+shape = SubResource("RectangleShape2D_vsn5o")
+
+[node name="out_of_the_world" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="out_of_the_world"]
+position = Vector2(1933, 1634)
+shape = SubResource("RectangleShape2D_qdbrj")
+
+[node name="key" type="Area2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(1204, 272)
+rotation = -0.00110206
+scale = Vector2(-12.3118, -11.1056)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="key"]
+position = Vector2(83.8135, 9.37733)
+scale = Vector2(1, 0.840001)
+shape = SubResource("RectangleShape2D_v7wos")
+
+[node name="Sprite2D" type="Sprite2D" parent="key"]
+position = Vector2(83.812, 9.28668)
+rotation = 3.14447
+scale = Vector2(0.124169, 0.125975)
+texture = ExtResource("9_mv5cn")
+region_enabled = true
+region_rect = Rect2(94, 0, 33, 30)
+
+[node name="key2" type="Area2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(1764, 783)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="key2"]
+position = Vector2(180.5, 145.59)
+scale = Vector2(1, 0.840001)
+shape = SubResource("RectangleShape2D_v7wos")
+
+[node name="Sprite2D" type="Sprite2D" parent="key2"]
+position = Vector2(181, 150)
+scale = Vector2(1.85504, 1.91538)
+texture = ExtResource("9_mv5cn")
+region_enabled = true
+region_rect = Rect2(95, 1, 31, 28)
+
+[node name="key3" type="Area2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(2550, 308)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="key3"]
+position = Vector2(180.5, 145.59)
+scale = Vector2(1, 0.840001)
+shape = SubResource("RectangleShape2D_v7wos")
+
+[node name="Sprite2D" type="Sprite2D" parent="key3"]
+position = Vector2(181, 150)
+scale = Vector2(1.85504, 1.91538)
+texture = ExtResource("9_mv5cn")
+region_enabled = true
+region_rect = Rect2(95, 1, 31, 28)
+
+[node name="keycount" type="CanvasLayer" parent="."]
+script = ExtResource("10_672yv")
+
+[node name="gotkey" type="Label" parent="keycount"]
+offset_left = 64.0
+offset_top = 34.0
+offset_right = 197.0
+offset_bottom = 92.0
+scale = Vector2(1.98934, 1.5417)
+text = "Keys: 0"
+label_settings = SubResource("LabelSettings_qr5u8")
+
+[node name="keycount2" type="CanvasLayer" parent="."]
+script = ExtResource("10_672yv")
+
+[node name="gotkey" type="Label" parent="keycount2"]
+offset_left = 2002.0
+offset_top = 41.0
+offset_right = 2135.0
+offset_bottom = 99.0
+scale = Vector2(1.98934, 1.5417)
+text = "Keys: 0"
+label_settings = SubResource("LabelSettings_qr5u8")
+
+[connection signal="body_entered" from="firstpart" to="Camera2D_2" method="_on_firstpart_body_entered"]
+[connection signal="body_entered" from="firstpart" to="keycount" method="_on_firstpart_body_entered"]
+[connection signal="body_exited" from="firstpart" to="Camera2D_2" method="_on_firstpart_body_exited"]
+[connection signal="body_exited" from="firstpart" to="keycount" method="_on_firstpart_body_exited"]
+[connection signal="body_entered" from="spikes/spike_area" to="spikes" method="_on_spike_area_body_entered"]
 [connection signal="body_entered" from="deur" to="Player" method="_on_deur_body_entered"]
 [connection signal="body_exited" from="deur" to="Player" method="_on_deur_body_exited"]
+[connection signal="keyscount" from="deur" to="keycount" method="_on_deur_keyscount"]
+[connection signal="keyscount" from="deur" to="keycount2" method="_on_deur_keyscount"]
+[connection signal="body_entered" from="out_of_the_world" to="spikes" method="_on_out_of_the_world_body_entered"]
+[connection signal="body_entered" from="key" to="deur" method="_on_key_body_entered"]
+[connection signal="body_entered" from="key2" to="deur" method="_on_key_2_body_entered"]
+[connection signal="body_entered" from="key3" to="deur" method="_on_key_3_body_entered"]
