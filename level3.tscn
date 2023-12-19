@@ -1,15 +1,20 @@
-[gd_scene load_steps=23 format=3 uid="uid://beto4f5c2i1ya"]
+[gd_scene load_steps=28 format=3 uid="uid://beto4f5c2i1ya"]
 
 [ext_resource type="Texture2D" uid="uid://rg1s7kn274nt" path="res://Assets/Cave/background4a.png" id="1_bn28f"]
+[ext_resource type="PackedScene" uid="uid://boxpqa0m0ihcf" path="res://UI/Scenes/PauseMenu.tscn" id="1_ocp8a"]
+[ext_resource type="PackedScene" uid="uid://cjl8alxk22xlp" path="res://UI/Scenes/PauseOptions.tscn" id="2_0l42b"]
 [ext_resource type="PackedScene" uid="uid://c5emhqsb5jv2r" path="res://Objects/Player/player.tscn" id="2_1uyc6"]
 [ext_resource type="Texture2D" uid="uid://vov7d4eoptp3" path="res://Assets/Cave/mainlev_build.png" id="3_cu0ol"]
+[ext_resource type="PackedScene" uid="uid://cks2vjvy0ql8y" path="res://UI/Scenes/GameOver.tscn" id="3_whg8a"]
 [ext_resource type="PackedScene" uid="uid://cnhkep3bagw6q" path="res://Objects/Background/background.tscn" id="4_hslpk"]
+[ext_resource type="PackedScene" uid="uid://v0vjldbny4wc" path="res://UI/Scenes/EndScreen.tscn" id="4_ygrqo"]
 [ext_resource type="Script" path="res://Levels/Level3/Camera2D_2.gd" id="5_mabvr"]
 [ext_resource type="Texture2D" uid="uid://bstgtmhs8v63r" path="res://Assets/Cave/props1.png" id="6_m82om"]
 [ext_resource type="Script" path="res://Levels/Level3/spikes.gd" id="6_ymcot"]
 [ext_resource type="Script" path="res://Levels/Level3/deur.gd" id="7_7602e"]
 [ext_resource type="Texture2D" uid="uid://didqh8a5ggbp2" path="res://Assets/level3/KeyIcons.png" id="9_mv5cn"]
 [ext_resource type="Script" path="res://Levels/Level3/keycount.gd" id="10_672yv"]
+[ext_resource type="Texture2D" uid="uid://c1munelptonky" path="res://Assets/Lights/2d_lights_and_shadows_neutral_point_light.webp" id="14_vdmew"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fawy0"]
 texture = ExtResource("3_cu0ol")
@@ -3076,6 +3081,19 @@ outline_color = Color(0.501961, 0.623529, 0.886275, 1)
 
 [node name="level3" type="Node2D"]
 
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("1_ocp8a")]
+
+[node name="PauseOptions" parent="UI" instance=ExtResource("2_0l42b")]
+visible = false
+
+[node name="GameOver" parent="UI" instance=ExtResource("3_whg8a")]
+visible = false
+
+[node name="EndScreenCredits" parent="UI" instance=ExtResource("4_ygrqo")]
+visible = false
+
 [node name="Background4a" type="Sprite2D" parent="."]
 position = Vector2(963.5, 543)
 scale = Vector2(2.00312, 2.25417)
@@ -3091,7 +3109,6 @@ position = Vector2(159, 827)
 scale = Vector2(2, 2)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0352941, 0.0352941, 0.0352941, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -3316,102 +3333,95 @@ texture = ExtResource("6_m82om")
 region_enabled = true
 region_rect = Rect2(609, 381, 175, 71)
 
-[node name="spike2" type="StaticBody2D" parent="spikes"]
-position = Vector2(-3052, 712)
+[node name="spike_area2" type="Area2D" parent="spikes"]
 
-[node name="Sprite2D" type="Sprite2D" parent="spikes/spike2"]
-position = Vector2(835.999, -53)
+[node name="Sprite2D" type="Sprite2D" parent="spikes/spike_area2"]
+position = Vector2(-2216, 659)
 scale = Vector2(1.62928, 1.47497)
 texture = ExtResource("6_m82om")
 region_enabled = true
 region_rect = Rect2(609, 381, 175, 71)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike2"]
-position = Vector2(821.999, -45)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike_area2"]
+position = Vector2(-2230, 667)
 scale = Vector2(15.956, 3.71195)
 shape = SubResource("CapsuleShape2D_ne8e1")
 
-[node name="spike3" type="StaticBody2D" parent="spikes"]
-position = Vector2(-4244, -632)
+[node name="spike_area3" type="Area2D" parent="spikes"]
 
-[node name="Sprite2D" type="Sprite2D" parent="spikes/spike3"]
-position = Vector2(781, 892)
+[node name="Sprite2D" type="Sprite2D" parent="spikes/spike_area3"]
+position = Vector2(-3463, 260)
 texture = ExtResource("6_m82om")
 region_enabled = true
 region_rect = Rect2(219, 359, 116, 69)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike3"]
-position = Vector2(776, 897)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike_area3"]
+position = Vector2(-3468, 265)
 scale = Vector2(5.70493, 2.65319)
 shape = SubResource("CapsuleShape2D_ne8e1")
 
-[node name="spike4" type="StaticBody2D" parent="spikes"]
-position = Vector2(-967, -121)
+[node name="spike_area4" type="Area2D" parent="spikes"]
 
-[node name="Sprite2D" type="Sprite2D" parent="spikes/spike4"]
-position = Vector2(754, 892)
+[node name="Sprite2D" type="Sprite2D" parent="spikes/spike_area4"]
+position = Vector2(-213, 771)
 texture = ExtResource("6_m82om")
 region_enabled = true
 region_rect = Rect2(609, 381, 175, 71)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike4"]
-position = Vector2(754, 894)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike_area4"]
+position = Vector2(-213, 773)
 scale = Vector2(8.14493, 2.65319)
 shape = SubResource("CapsuleShape2D_ne8e1")
 
-[node name="spike5" type="StaticBody2D" parent="spikes"]
-position = Vector2(-3805, -188)
+[node name="spike_area5" type="Area2D" parent="spikes"]
 
-[node name="Sprite2D" type="Sprite2D" parent="spikes/spike5"]
-position = Vector2(2193, 1054)
+[node name="Sprite2D" type="Sprite2D" parent="spikes/spike_area5"]
+position = Vector2(-1612, 866)
 texture = ExtResource("6_m82om")
 region_enabled = true
 region_rect = Rect2(801, 360, 88, 61)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike5"]
-position = Vector2(2193, 1056)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike_area5"]
+position = Vector2(-1612, 868)
 scale = Vector2(5.18493, 2.45143)
 shape = SubResource("CapsuleShape2D_ne8e1")
 
-[node name="spike6" type="StaticBody2D" parent="spikes"]
-position = Vector2(-2143, -26)
+[node name="spike_area6" type="Area2D" parent="spikes"]
 
-[node name="Sprite2D" type="Sprite2D" parent="spikes/spike6"]
-position = Vector2(754, 892)
+[node name="Sprite2D" type="Sprite2D" parent="spikes/spike_area6"]
+position = Vector2(-1389, 866)
 texture = ExtResource("6_m82om")
 region_enabled = true
 region_rect = Rect2(103, 371, 101, 59)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike6"]
-position = Vector2(754, 894)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike_area6"]
+position = Vector2(-1389, 868)
 scale = Vector2(5.18493, 2.45143)
 shape = SubResource("CapsuleShape2D_ne8e1")
 
-[node name="spike7" type="StaticBody2D" parent="spikes"]
-position = Vector2(-3805, -188)
+[node name="spike_area7" type="Area2D" parent="spikes"]
 
-[node name="Sprite2D" type="Sprite2D" parent="spikes/spike7"]
-position = Vector2(2640, 1056)
+[node name="Sprite2D" type="Sprite2D" parent="spikes/spike_area7"]
+position = Vector2(-1165, 868)
 texture = ExtResource("6_m82om")
 region_enabled = true
 region_rect = Rect2(224, 355, 103, 59)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike7"]
-position = Vector2(2640, 1058)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike_area7"]
+position = Vector2(-1165, 870)
 scale = Vector2(5.18493, 2.45143)
 shape = SubResource("CapsuleShape2D_ne8e1")
 
-[node name="spike8" type="StaticBody2D" parent="spikes"]
-position = Vector2(-3805, -188)
+[node name="spike_area8" type="Area2D" parent="spikes"]
 
-[node name="Sprite2D" type="Sprite2D" parent="spikes/spike8"]
-position = Vector2(2866, 1058)
+[node name="Sprite2D" type="Sprite2D" parent="spikes/spike_area8"]
+position = Vector2(-939, 870)
 texture = ExtResource("6_m82om")
 region_enabled = true
 region_rect = Rect2(801, 360, 88, 61)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike8"]
-position = Vector2(2866, 1060)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike_area8"]
+position = Vector2(-939, 872)
 scale = Vector2(5.18493, 2.45143)
 shape = SubResource("CapsuleShape2D_ne8e1")
 
@@ -3437,6 +3447,12 @@ position = Vector2(71.9995, 908.329)
 rotation = -3.14159
 scale = Vector2(5.78571, 975.585)
 shape = SubResource("RectangleShape2D_vsn5o")
+
+[node name="PointLight2D" type="PointLight2D" parent="deur"]
+position = Vector2(-41.6914, 9)
+scale = Vector2(0.0973862, -0.126206)
+texture = ExtResource("14_vdmew")
+texture_scale = 7.25
 
 [node name="out_of_the_world" type="Area2D" parent="."]
 
@@ -3464,6 +3480,11 @@ texture = ExtResource("9_mv5cn")
 region_enabled = true
 region_rect = Rect2(94, 0, 33, 30)
 
+[node name="PointLight2D" type="PointLight2D" parent="key"]
+position = Vector2(83.2477, 9.28448)
+scale = Vector2(0.0418866, -0.0661873)
+texture = ExtResource("14_vdmew")
+
 [node name="key2" type="Area2D" parent="."]
 light_mask = 3
 visibility_layer = 3
@@ -3481,6 +3502,10 @@ texture = ExtResource("9_mv5cn")
 region_enabled = true
 region_rect = Rect2(95, 1, 31, 28)
 
+[node name="PointLight2D" type="PointLight2D" parent="key2"]
+position = Vector2(187, 146)
+texture = ExtResource("14_vdmew")
+
 [node name="key3" type="Area2D" parent="."]
 light_mask = 3
 visibility_layer = 3
@@ -3497,6 +3522,10 @@ scale = Vector2(1.85504, 1.91538)
 texture = ExtResource("9_mv5cn")
 region_enabled = true
 region_rect = Rect2(95, 1, 31, 28)
+
+[node name="PointLight2D" type="PointLight2D" parent="key3"]
+position = Vector2(190, 143)
+texture = ExtResource("14_vdmew")
 
 [node name="keycount" type="CanvasLayer" parent="."]
 script = ExtResource("10_672yv")
