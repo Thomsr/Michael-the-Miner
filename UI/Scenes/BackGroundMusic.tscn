@@ -6,6 +6,6 @@
 [node name="BackGroundMusic" type="AudioStreamPlayer"]
 process_mode = 3
 stream = ExtResource("1_u3bi7")
-volume_db = -6.0
+volume_db = -25.0
 bus = &"Music"
 script = ExtResource("2_yotmn")

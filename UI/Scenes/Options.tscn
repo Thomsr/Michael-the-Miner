@@ -127,6 +127,7 @@ text = "Music Volume"
 
 [node name="MusicSlider" type="HSlider" parent="VBoxContainer/HorizontalOptions/VAudio"]
 layout_mode = 2
+min_value = -1.0
 max_value = 10.0
 step = 0.01
 script = ExtResource("6_7g4xg")

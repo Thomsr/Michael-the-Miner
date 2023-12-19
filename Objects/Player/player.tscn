@@ -171,6 +171,7 @@ one_shot = true
 
 [node name="Jumpsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("32_cyaq5")
+volume_db = 5.0
 bus = &"sfx"
 
 [node name="AmbientCaveSound" parent="." instance=ExtResource("33_36fai")]
