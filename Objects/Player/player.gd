@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var _animated_sprite = $AnimatedSprite2D
 @onready var timer = $Timer
+@onready var jump_sound: AudioStreamPlayer = $Jumpsound 
 @export var helmet: Sprite2D
 
 var animation_lock = false;
@@ -19,10 +20,12 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		
 	if(animation_lock):
+		velocity.x = 0;
 		move_and_slide()
 		return
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		jump_sound.play()
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
