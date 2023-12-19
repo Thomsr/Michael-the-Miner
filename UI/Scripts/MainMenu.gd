@@ -18,6 +18,8 @@ func _on_confirmation_dialog_confirmed():
 #Starting the game
 func _on_play_button_pressed():
 	Audiomanager.play_sound(stream)
+	PlayerItems.HasFireShield = false
+	PlayerItems.HasHelmet = false
 	get_tree().change_scene_to_file("res://Levels/Level1/level_1.tscn")
 
 #Going to options screen

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cijivshjjdto7"]
+
+[ext_resource type="AudioStream" uid="uid://clmuep5c21ewq" path="res://Assets/Sounds/Ambient_Cave.wav" id="1_cgx8u"]
+[ext_resource type="Script" path="res://UI/Scripts/BackGroundMusic.gd" id="2_kt8vc"]
+
+[node name="AmbientCaveSound" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_cgx8u")
+volume_db = -6.0
+bus = &"sfx"
+script = ExtResource("2_kt8vc")
