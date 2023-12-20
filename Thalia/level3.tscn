@@ -3108,7 +3108,7 @@ texture = ExtResource("1_bn28f")
 
 [node name="Player" parent="." instance=ExtResource("2_1uyc6")]
 z_index = 5
-position = Vector2(1841, 210)
+position = Vector2(126, 826)
 scale = Vector2(2, 2)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -3462,6 +3462,7 @@ texture_scale = 7.25
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="out_of_the_world"]
 position = Vector2(1933, 1634)
+scale = Vector2(1.68, 1)
 shape = SubResource("RectangleShape2D_qdbrj")
 
 [node name="key" type="Area2D" parent="."]
