@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc3oilkys3lv7"]
+
+[ext_resource type="Texture2D" uid="uid://vov7d4eoptp3" path="res://Assets/Cave/mainlev_build.png" id="1_wvpa7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txlbq"]
+size = Vector2(120, 30)
+
+[node name="MovingPlatform" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 0)
+shape = SubResource("RectangleShape2D_txlbq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.94521, 2.27394)
+texture = ExtResource("1_wvpa7")
+region_enabled = true
+region_rect = Rect2(530, 237, 32, 18)

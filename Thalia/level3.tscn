@@ -1,8 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://beto4f5c2i1ya"]
+[gd_scene load_steps=28 format=3 uid="uid://beto4f5c2i1ya"]
 
 [ext_resource type="Texture2D" uid="uid://rg1s7kn274nt" path="res://Assets/Cave/background4a.png" id="1_bn28f"]
+[ext_resource type="PackedScene" uid="uid://2v46tddueivh" path="res://MovingPlatformsTry/platform_controller.tscn" id="1_fupg0"]
 [ext_resource type="PackedScene" uid="uid://boxpqa0m0ihcf" path="res://UI/Scenes/PauseMenu.tscn" id="1_ocp8a"]
 [ext_resource type="PackedScene" uid="uid://c5emhqsb5jv2r" path="res://Objects/Player/player.tscn" id="2_1uyc6"]
+[ext_resource type="PackedScene" uid="uid://dc3oilkys3lv7" path="res://MovingPlatformsTry/moving_platform.tscn" id="2_gsm23"]
 [ext_resource type="Texture2D" uid="uid://vov7d4eoptp3" path="res://Assets/Cave/mainlev_build.png" id="3_cu0ol"]
 [ext_resource type="PackedScene" uid="uid://cks2vjvy0ql8y" path="res://UI/Scenes/GameOver.tscn" id="3_whg8a"]
 [ext_resource type="PackedScene" uid="uid://cnhkep3bagw6q" path="res://Objects/Background/background.tscn" id="4_hslpk"]
@@ -3079,6 +3081,13 @@ outline_color = Color(0.501961, 0.623529, 0.886275, 1)
 
 [node name="level3" type="Node2D"]
 
+[node name="PlatformController" parent="." instance=ExtResource("1_fupg0")]
+position = Vector2(3675, 550)
+radius = Vector2(0, 212)
+
+[node name="MovingPlatform" parent="PlatformController" groups=["platforms"] instance=ExtResource("2_gsm23")]
+z_index = 5
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("1_ocp8a")]
@@ -3098,7 +3107,8 @@ scale = Vector2(2.00312, 2.25417)
 texture = ExtResource("1_bn28f")
 
 [node name="Player" parent="." instance=ExtResource("2_1uyc6")]
-position = Vector2(229, 823)
+z_index = 5
+position = Vector2(1841, 210)
 scale = Vector2(2, 2)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -3120,7 +3130,7 @@ layer_1/tile_data = PackedInt32Array(1638445, 3670016, 6, 1703981, 3670016, 7, 1
 [node name="Background" parent="." instance=ExtResource("4_hslpk")]
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(1267.63, 717.071)
+position = Vector2(1266, 953)
 scale = Vector2(0.997762, 0.814256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
@@ -3137,7 +3147,7 @@ region_enabled = true
 region_rect = Rect2(530, 237, 32, 18)
 
 [node name="AnimatableBody2D2" type="AnimatableBody2D" parent="."]
-position = Vector2(762.529, 441.962)
+position = Vector2(1027, 302)
 scale = Vector2(0.997762, 0.814256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D2"]
@@ -3154,7 +3164,7 @@ region_enabled = true
 region_rect = Rect2(530, 237, 32, 18)
 
 [node name="AnimatableBody2D3" type="AnimatableBody2D" parent="."]
-position = Vector2(1447.68, 396)
+position = Vector2(1138, 396)
 scale = Vector2(0.997762, 0.814256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D3"]
@@ -3171,7 +3181,7 @@ region_enabled = true
 region_rect = Rect2(530, 237, 32, 18)
 
 [node name="AnimatableBody2D4" type="AnimatableBody2D" parent="."]
-position = Vector2(2255, 476.683)
+position = Vector2(2255, 675)
 scale = Vector2(0.997762, 0.814256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D4"]
@@ -3188,7 +3198,7 @@ region_enabled = true
 region_rect = Rect2(530, 237, 32, 18)
 
 [node name="AnimatableBody2D5" type="AnimatableBody2D" parent="."]
-position = Vector2(3199, 973.171)
+position = Vector2(3199, 649)
 scale = Vector2(0.997762, 0.814256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D5"]
@@ -3205,7 +3215,7 @@ region_enabled = true
 region_rect = Rect2(530, 237, 32, 18)
 
 [node name="AnimatableBody2D6" type="AnimatableBody2D" parent="."]
-position = Vector2(2510.54, 490.388)
+position = Vector2(2670, 377)
 scale = Vector2(0.997762, 0.814256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D6"]
@@ -3222,7 +3232,8 @@ region_enabled = true
 region_rect = Rect2(530, 237, 32, 18)
 
 [node name="AnimatableBody2D5_2" type="AnimatableBody2D" parent="."]
-position = Vector2(3727.1, 811.598)
+visible = false
+position = Vector2(3730, 745)
 scale = Vector2(0.997762, 0.814256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D5_2"]
@@ -3550,6 +3561,7 @@ label_settings = SubResource("LabelSettings_qr5u8")
 [connection signal="body_exited" from="firstpart" to="keycount" method="_on_firstpart_body_exited"]
 [connection signal="body_entered" from="spikes/spike_area" to="spikes" method="_on_spike_area_body_entered"]
 [connection signal="body_entered" from="deur" to="Player" method="_on_deur_body_entered"]
+[connection signal="body_entered" from="deur" to="deur" method="_on_body_entered"]
 [connection signal="body_exited" from="deur" to="Player" method="_on_deur_body_exited"]
 [connection signal="keyscount" from="deur" to="keycount" method="_on_deur_keyscount"]
 [connection signal="keyscount" from="deur" to="keycount2" method="_on_deur_keyscount"]

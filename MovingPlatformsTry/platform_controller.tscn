@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://2v46tddueivh"]
+
+[ext_resource type="Script" path="res://MovingPlatformsTry/PlatformController.gd" id="1_n64ip"]
+
+[node name="PlatformController" type="Node2D"]
+script = ExtResource("1_n64ip")

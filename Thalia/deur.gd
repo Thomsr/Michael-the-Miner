@@ -26,10 +26,8 @@ func _on_key_3_body_entered(body):
 		keys = keys + 1
 		keyscount.emit(keys)
 
+#Let op signals.
 func _on_body_entered(body: Node2D) -> void:
-	haskey1 = true
-	haskey2 = true
-	haskey3 = true
 	if (haskey1 == true && haskey2 == true && haskey3 == true):
 		if body.has_method("die"):
 			get_tree().change_scene_to_file("res://UI/Scenes/EndScreen.tscn")
