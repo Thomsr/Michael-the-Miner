@@ -258,7 +258,10 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("16_07ofu")
 theme_override_font_sizes/font_size = 30
 text = "SFX - \"Interface\" by UNIVERSFIELD on Pixabay
-BGM - \"A bit of Hope\" by David Fesliyan on Fesliyan Studios"
+BGM - \"A bit of Hope\" by David Fesliyan on Fesliyan Studios
+SFX- \"Jump\" By ShaneF91
+SFX- \"Cave\" By Zixem
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
