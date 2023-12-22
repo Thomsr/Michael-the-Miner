@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cr11y3mmjwtsg" path="res://Assets/level_1/FireShield/FireShield.tscn" id="5_0ilb1"]
 [ext_resource type="PackedScene" uid="uid://bqondw68kvuxg" path="res://Assets/level_1/FireWall/FireWall.tscn" id="6_a7bss"]
 [ext_resource type="Texture2D" uid="uid://c1munelptonky" path="res://Assets/Lights/2d_lights_and_shadows_neutral_point_light.webp" id="8_u2nak"]
-[ext_resource type="PackedScene" uid="uid://wetxfr2fnpws" path="res://Levels/Level1/levelchange.tscn" id="9_kipms"]
+[ext_resource type="PackedScene" path="res://Levels/Level1/levelchange.tscn" id="9_kipms"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fawy0"]
 texture = ExtResource("2_fcl0a")

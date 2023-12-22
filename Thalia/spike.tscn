@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2e2u5ndpudpy"]
+
+[ext_resource type="Texture2D" uid="uid://d38pw860rahqx" path="res://Assets/Cave/spike.png" id="1_jwjgw"]
+
+[sub_resource type="GDScript" id="GDScript_fwjyd"]
+script/source = "extends Node2D
+
+func _on_body_entered(body):
+	if body.has_method(\"die\"):
+		body.die()
+"
+
+[node name="Spike" type="Area2D"]
+z_index = -1
+script = SubResource("GDScript_fwjyd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jwjgw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(2, -44, -7, -20, -16, -13, -18, 8, -24, 14, -24, 33, -29, 40, -29, 44, 29, 44, 29, 33, 25, 29, 25, 25, 24, 25, 24, 13, 20, 9, 20, -5, 14, -7, 14, -14, 13, -18, 12, -21, 11, -24, 10, -27, 9, -32, 8, -36, 6, -37, 6, -41)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
