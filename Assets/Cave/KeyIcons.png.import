@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://didqh8a5ggbp2"
-path="res://.godot/imported/KeyIcons.png-a8d482d2b6a582e93061058aecc0af0e.ctex"
+path="res://.godot/imported/KeyIcons.png-8b6a03e8b60c8f076afaee62ea47eacf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/level3/KeyIcons.png"
-dest_files=["res://.godot/imported/KeyIcons.png-a8d482d2b6a582e93061058aecc0af0e.ctex"]
+source_file="res://Assets/Cave/KeyIcons.png"
+dest_files=["res://.godot/imported/KeyIcons.png-8b6a03e8b60c8f076afaee62ea47eacf.ctex"]
 
 [params]
 

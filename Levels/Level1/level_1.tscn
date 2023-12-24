@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dn0x57kfeg43o"]
+[gd_scene load_steps=23 format=3 uid="uid://dn0x57kfeg43o"]
 
 [ext_resource type="PackedScene" uid="uid://boxpqa0m0ihcf" path="res://UI/Scenes/PauseMenu.tscn" id="1_niunr"]
 [ext_resource type="PackedScene" uid="uid://c5emhqsb5jv2r" path="res://Objects/Player/player.tscn" id="1_qdk1l"]
@@ -6,10 +6,75 @@
 [ext_resource type="PackedScene" uid="uid://cks2vjvy0ql8y" path="res://UI/Scenes/GameOver.tscn" id="2_hdjdy"]
 [ext_resource type="PackedScene" uid="uid://cnhkep3bagw6q" path="res://Objects/Background/background.tscn" id="3_2ds1p"]
 [ext_resource type="PackedScene" uid="uid://c2ibiqkogj2ef" path="res://Assets/level_1/Lava Shooter/Volcano.tscn" id="4_igyru"]
+[ext_resource type="Texture2D" uid="uid://l8w2apq88ovj" path="res://Assets/level_1/FireWall/fire_fx_v1.0/png/orange/loops/burning_loop_2.png" id="4_y5tad"]
 [ext_resource type="PackedScene" uid="uid://cr11y3mmjwtsg" path="res://Assets/level_1/FireShield/FireShield.tscn" id="5_0ilb1"]
 [ext_resource type="PackedScene" uid="uid://bqondw68kvuxg" path="res://Assets/level_1/FireWall/FireWall.tscn" id="6_a7bss"]
 [ext_resource type="Texture2D" uid="uid://c1munelptonky" path="res://Assets/Lights/2d_lights_and_shadows_neutral_point_light.webp" id="8_u2nak"]
-[ext_resource type="PackedScene" path="res://Levels/Level1/levelchange.tscn" id="9_kipms"]
+[ext_resource type="PackedScene" uid="uid://wetxfr2fnpws" path="res://Levels/Level1/levelchange.tscn" id="9_kipms"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ciab"]
+atlas = ExtResource("4_y5tad")
+region = Rect2(0, 0, 20, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wew16"]
+atlas = ExtResource("4_y5tad")
+region = Rect2(20, 0, 20, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clut4"]
+atlas = ExtResource("4_y5tad")
+region = Rect2(40, 0, 20, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usjhu"]
+atlas = ExtResource("4_y5tad")
+region = Rect2(60, 0, 20, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62edb"]
+atlas = ExtResource("4_y5tad")
+region = Rect2(80, 0, 20, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orbkg"]
+atlas = ExtResource("4_y5tad")
+region = Rect2(100, 0, 20, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8iqn"]
+atlas = ExtResource("4_y5tad")
+region = Rect2(120, 0, 20, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asw0f"]
+atlas = ExtResource("4_y5tad")
+region = Rect2(140, 0, 20, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rt2d8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ciab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wew16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clut4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usjhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62edb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orbkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8iqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asw0f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fawy0"]
 texture = ExtResource("2_fcl0a")
@@ -2943,6 +3008,16 @@ visible = false
 z_index = 1
 position = Vector2(102, 118)
 scale = Vector2(2, 2)
+
+[node name="FireImmunity" type="AnimatedSprite2D" parent="Player"]
+visible = false
+show_behind_parent = true
+position = Vector2(-3, -14.5)
+scale = Vector2(3.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_rt2d8")
+autoplay = "default"
+frame_progress = 0.00587242
+speed_scale = 3.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)

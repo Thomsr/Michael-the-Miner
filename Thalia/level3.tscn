@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cnhkep3bagw6q" path="res://Objects/Background/background.tscn" id="4_hslpk"]
 [ext_resource type="Script" path="res://Thalia/Camera2D_2.gd" id="5_mabvr"]
 [ext_resource type="Script" path="res://Thalia/deur.gd" id="7_7602e"]
-[ext_resource type="Texture2D" uid="uid://fabblq5q0i3i" path="res://icon.svg" id="9_mv5cn"]
 [ext_resource type="Script" path="res://Thalia/keycount.gd" id="10_672yv"]
+[ext_resource type="Texture2D" uid="uid://didqh8a5ggbp2" path="res://Assets/Cave/KeyIcons.png" id="11_darvh"]
 [ext_resource type="Texture2D" uid="uid://c1munelptonky" path="res://Assets/Lights/2d_lights_and_shadows_neutral_point_light.webp" id="14_vdmew"]
 [ext_resource type="PackedScene" uid="uid://d2e2u5ndpudpy" path="res://Thalia/spike.tscn" id="15_ix6lg"]
 
@@ -3370,7 +3370,7 @@ shape = SubResource("RectangleShape2D_v7wos")
 position = Vector2(83.812, 9.28668)
 rotation = 3.14447
 scale = Vector2(0.124169, 0.125975)
-texture = ExtResource("9_mv5cn")
+texture = ExtResource("11_darvh")
 region_enabled = true
 region_rect = Rect2(94, 0, 33, 30)
 
@@ -3392,7 +3392,7 @@ shape = SubResource("RectangleShape2D_v7wos")
 [node name="Sprite2D" type="Sprite2D" parent="Keys/key2"]
 position = Vector2(181, 150)
 scale = Vector2(1.85504, 1.91538)
-texture = ExtResource("9_mv5cn")
+texture = ExtResource("11_darvh")
 region_enabled = true
 region_rect = Rect2(95, 1, 31, 28)
 
@@ -3413,7 +3413,7 @@ shape = SubResource("RectangleShape2D_v7wos")
 [node name="Sprite2D" type="Sprite2D" parent="Keys/key3"]
 position = Vector2(181, 150)
 scale = Vector2(1.85504, 1.91538)
-texture = ExtResource("9_mv5cn")
+texture = ExtResource("11_darvh")
 region_enabled = true
 region_rect = Rect2(95, 1, 31, 28)
 
