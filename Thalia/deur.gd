@@ -5,17 +5,23 @@ var haskey2 = false
 var haskey3 = false
 var keys = 0
 
+@onready var KEY1 = $"../Keys/key"
+@onready var KEY2 = $"../Keys/key2"
+@onready var KEY3 = $"../Keys/key3"
+
 signal keyscount
 
 func _on_key_body_entered(body):
 	if haskey1 == false:
 		haskey1 = true
+		KEY1.visible = false
 		keys = keys + 1
 		keyscount.emit(keys)
 
 func _on_key_2_body_entered(body):
 	if haskey2 == false:
 		haskey2 = true
+		KEY2.visible = false
 		keys = keys + 1
 		keyscount.emit(keys)
 
@@ -23,6 +29,7 @@ func _on_key_2_body_entered(body):
 func _on_key_3_body_entered(body):
 	if haskey3 == false:
 		haskey3 = true
+		KEY3.visible = false
 		keys = keys + 1
 		keyscount.emit(keys)
 
