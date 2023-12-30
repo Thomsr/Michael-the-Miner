@@ -24,5 +24,5 @@ func _on_value_changed(value: float):
 	#With the if statement it should skip playing
 	#initialisation sound -_-
 	if i >= 1:
-		Audiomanager.play_sound(stream)
+			Audiomanager.play_sound(stream)
 	i = i + 1
